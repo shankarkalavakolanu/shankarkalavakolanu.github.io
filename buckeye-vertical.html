@@ -10,14 +10,21 @@
 <body class="bg-gray-50">
     <!-- Navigation -->
     <nav class="bg-white shadow-md">
-        <div class="container mx-auto px-6 py-4">
-            <div class="flex justify-between items-center">
-                <a href="index.html" class="text-xl font-bold text-blue-600">Bhavanishankar K.</a>
-                <div class="flex space-x-4">
-                    <a href="buckeye-vertical.html" class="px-3 py-2 rounded-lg hover:bg-gray-100">Buckeye Vertical</a>
-                    <a href="quantum-leap.html" class="px-3 py-2 rounded-lg hover:bg-gray-100">Quantum Leap</a>
-                    <a href="dreaming-falcon.html" class="px-3 py-2 rounded-lg hover:bg-gray-100">Dreaming Falcon</a>
-                    <a href="capstone.html" class="px-3 py-2 rounded-lg hover:bg-gray-100">Senior Capstone</a>
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex flex-col md:flex-row md:justify-between md:items-center">
+                <div class="flex justify-between items-center">
+                    <a href="index.html" class="text-xl font-bold text-blue-600">Bhavanishankar K.</a>
+                    <button class="md:hidden" onclick="toggleMenu()">
+                        <i data-feather="menu"></i>
+                    </button>
+                </div>
+                <div class="hidden md:flex md:space-x-4" id="mobileMenu">
+                    <div class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4 mt-4 md:mt-0">
+                        <a href="buckeye-vertical.html" class="px-3 py-2 rounded-lg hover:bg-gray-100">Buckeye Vertical</a>
+                        <a href="quantum-leap.html" class="px-3 py-2 rounded-lg hover:bg-gray-100">Quantum Leap</a>
+                        <a href="dreaming-falcon.html" class="px-3 py-2 rounded-lg hover:bg-gray-100">Dreaming Falcon</a>
+                        <a href="capstone.html" class="px-3 py-2 rounded-lg hover:bg-gray-100">Senior Capstone</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -25,10 +32,10 @@
 
     <!-- Project Hero Section -->
     <header class="bg-blue-600 text-white">
-        <div class="container mx-auto px-6 py-16">
-            <h1 class="text-4xl font-bold mb-4">Buckeye Vertical</h1>
-            <p class="text-xl mb-4">Competition-Winning Autonomous Drone Development</p>
-            <div class="flex items-center space-x-4">
+        <div class="container mx-auto px-4 py-12 md:py-16">
+            <h1 class="text-3xl md:text-4xl font-bold mb-4">Buckeye Vertical</h1>
+            <p class="text-lg md:text-xl mb-4">Competition-Winning Autonomous Drone Development</p>
+            <div class="flex flex-wrap gap-3 md:gap-4">
                 <span class="bg-blue-500 px-3 py-1 rounded-full text-sm">2021-Present</span>
                 <span class="bg-blue-500 px-3 py-1 rounded-full text-sm">President & Team Lead</span>
                 <span class="bg-blue-500 px-3 py-1 rounded-full text-sm">First Place VFS Competition</span>
@@ -45,16 +52,16 @@
     </header>
 
     <!-- Project Overview -->
-    <section class="container mx-auto px-6 pb-8 pt-16">
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+    <section class="container mx-auto px-4 pb-8 pt-12 md:pt-16">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">
             <!-- Main Content -->
-            <div class="lg:col-span-2 space-y-8">
-                <div class="bg-white rounded-lg shadow-md p-6">
+            <div class="lg:col-span-2 space-y-6 md:space-y-8">
+                <div class="bg-white rounded-lg shadow-md p-4 md:p-6">
                     <h2 class="text-2xl font-bold mb-4">Project Overview</h2>
                     <p class="text-gray-600 mb-4">Led the development of an FAA Part 107 compliant carbon fiber quadcopter, focusing on precision payload delivery and autonomous navigation. Grew the team from 15 to 75 active members while securing major industry partnerships.</p>
                     
                     <!-- Key Achievements Carousel -->
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
                         <div class="bg-gray-50 p-4 rounded-lg">
                             <h3 class="font-bold text-lg text-blue-600">70%</h3>
                             <p class="text-sm text-gray-600">Vibration Reduction</p>
@@ -71,7 +78,7 @@
                 </div>
 
                 <!-- Technical Details -->
-                <div class="bg-white rounded-lg shadow-md p-6">
+                <div class="bg-white rounded-lg shadow-md p-4 md:p-6">
                     <h2 class="text-2xl font-bold mb-4">Technical Innovations</h2>
                     
                     <div class="space-y-6">
@@ -124,9 +131,9 @@
             </div>
 
             <!-- Sidebar -->
-            <div class="space-y-8">
+            <div class="space-y-6 md:space-y-8">
                 <!-- Technologies Used -->
-                <div class="bg-white rounded-lg shadow-md p-6">
+                <div class="bg-white rounded-lg shadow-md p-4 md:p-6">
                     <h3 class="text-xl font-bold mb-4">Technologies Used</h3>
                     <div class="flex flex-wrap gap-2">
                         <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">SOLIDWORKS</span>
@@ -142,7 +149,7 @@
                 </div>
 
                 <!-- Project Gallery -->
-                <div class="bg-white rounded-lg shadow-md p-6">
+                <div class="bg-white rounded-lg shadow-md p-4 md:p-6">
                     <h3 class="text-xl font-bold mb-4">Project Gallery</h3>
                     <div class="space-y-4">
                         <div class="bg-gray-200 h-48 rounded-lg flex items-center justify-center overflow-hidden">
@@ -160,19 +167,15 @@
                 </div>
             </div>
         </div>
-    </section class="mb-0">
-        <!-- 
-    ========================================
-    COMPETITION YEARS SECTION BEGIN 
-    This section may need styling adjustments
-    ========================================
-    -->
-    <section class="container mx-auto px-6 pt-8 mb-10">
-        <div class="bg-white rounded-lg shadow-md p-6">
-            <h2 class="text-3xl font-bold mb-8">Competition Years</h2>
+    </section>
+
+    <!-- Competition Years Section -->
+    <section class="container mx-auto px-4 pt-8 mb-10">
+        <div class="bg-white rounded-lg shadow-md p-4 md:p-6">
+            <h2 class="text-2xl md:text-3xl font-bold mb-6 md:mb-8">Competition Years</h2>
             
             <!-- Year Selection Buttons -->
-            <div class="flex flex-wrap gap-4 mb-8">
+            <div class="flex flex-wrap gap-3 md:gap-4 mb-6 md:mb-8">
                 <button onclick="showYear('2024')" id="btn-2024" 
                     class="px-6 py-2 rounded-full font-semibold bg-blue-600 text-white hover:bg-blue-700 transition-colors">
                     2024 - 2025
@@ -192,23 +195,27 @@
             </div>
 
             <!-- Year Content -->
-            <div class="bg-gray-50 rounded-lg p-6">
+            <div class="bg-gray-50 rounded-lg p-4 md:p-6">
                 <!-- 2024 Competition -->
                 <div id="year-2024" class="year-content">
                     <p class="text-xl font-bold mb-3">Season Summary</p>
                     <p class="text-gray-700 mb-6">Currently developing our next-generation autonomous drone for the 2024 - 2025 SUAS competition, focusing on precise target identification and accurate payload delivery.</p>
                     
-                    <div class="mt-4 mb-6 flex gap-4 justify-center">
-                        <img 
-                            src="/Images/12_11_2024_Drone_Cad.png"
-                            alt="Buckeye Vertical First Year"
-                            class="w-1/2 rounded-lg shadow-md object-cover mx-auto"
-                        />
-                        <img 
-                            src="/Images/Pre-maiden-flight_2024-25.JPG"
-                            alt="Buckeye Vertical First Year"
-                            class="w-1/2 rounded-lg shadow-md object-cover mx-auto"
-                        />
+                    <div class="mt-4 mb-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="aspect-[4/3] w-full rounded-lg shadow-md overflow-hidden">
+                            <img 
+                                src="/Images/12_11_2024_Drone_Cad.png"
+                                alt="Buckeye Vertical CAD Model"
+                                class="w-full h-full object-contain bg-white"
+                            />
+                        </div>
+                        <div class="aspect-[4/3] w-full rounded-lg shadow-md overflow-hidden">
+                            <img 
+                                src="/Images/Pre-maiden-flight_2024-25.JPG"
+                                alt="Buckeye Vertical Drone"
+                                class="w-full h-full object-cover"
+                            />
+                        </div>
                     </div>
 
                     <div class="space-y-6">
@@ -239,10 +246,7 @@
                     <p class="text-xl font-bold mb-3">Season Summary</p>
                     <p class="text-gray-700 mb-6">Led the team to 4th place in Mission Demonstration at the international SUAS Competition in Maryland, showcasing significant improvements in both autonomous capabilities and payload delivery accuracy. This achievement demonstrated remarkable progress from our debut year.</p>
                     
-                    <!-- YouTube Video -->
-                    
-                    
-                    <div class="grid grid-cols-2 gap-4 mb-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                         <div class="overflow-hidden rounded-lg">
                             <img 
                                 src="/Images/23-24_Drone_Pic.jpg" 
@@ -250,7 +254,7 @@
                                 class="w-full h-full object-cover rounded-lg"
                             />
                         </div>
-                        <div class="relative w-full" style="padding-top: 56.25%">
+                        <div class="relative w-full aspect-video">
                             <iframe 
                                 class="absolute top-0 left-0 w-full h-full rounded-lg"
                                 src="https://www.youtube.com/embed/1MYJbC0bmeI?si=F_AM-vO7nyzN8fC8"
@@ -294,7 +298,7 @@
                         <img 
                             src="/Images/2nd_year_hex.JPEG"
                             alt="Buckeye Vertical First Year"
-                            class="w-1/2 rounded-lg shadow-md object-cover"
+                            class="w-full md:w-1/2 rounded-lg shadow-md object-cover"
                         />
                     </div>
 
@@ -319,22 +323,27 @@
                         </div>
                     </div>
                 </div>
+
                 <!-- 2021 Competition -->
                 <div id="year-2021" class="year-content hidden">
                     <p class="text-xl font-bold mb-3">Season Summary</p>
                     <p class="text-gray-700 mb-6">First year as part of Buckeye Vertical, securing 1st place overall in the VFS Design-Build Competition. Successfully designed and implemented an innovative hexacopter platform that effectively met all competition requirements.</p>
                     
-                    <div class="mt-4 mb-6 flex gap-4 justify-center">
-                        <img 
-                            src="/Images/16_9_Me_Carrying_Drone_At_Comp.png"
-                            alt="Buckeye Vertical First Year"
-                            class="w-1/2 rounded-lg shadow-md object-cover mx-auto"
-                        />
-                        <img 
-                            src="/Images/VFS_First_Place_Pic.jpg"
-                            alt="Buckeye Vertical First Year"
-                            class="w-1/2 rounded-lg shadow-md object-cover mx-auto"
-                        />
+                    <div class="mt-4 mb-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="aspect-[4/3] w-full rounded-lg shadow-md overflow-hidden">
+                            <img 
+                                src="/Images/16_9_Me_Carrying_Drone_At_Comp.png"
+                                alt="Carrying Drone at Competition"
+                                class="w-full h-full object-cover"
+                            />
+                        </div>
+                        <div class="aspect-[4/3] w-full rounded-lg shadow-md overflow-hidden">
+                            <img 
+                                src="/Images/VFS_First_Place_Pic.jpg"
+                                alt="VFS First Place"
+                                class="w-full h-full object-cover"
+                            />
+                        </div>
                     </div>
 
                     <div class="space-y-6">
@@ -360,15 +369,18 @@
             </div>
         </div>
     </section>
-    <!-- 
-    ========================================
-    COMPETITION YEARS SECTION END
-    ========================================
-    -->
 
     <script>
+        // Initialize Feather Icons
         feather.replace();
         
+        // Mobile menu toggle
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+        
+        // Year selection function
         function showYear(year) {
             // Hide all year content
             document.querySelectorAll('.year-content').forEach(content => {
@@ -389,46 +401,10 @@
             document.getElementById('btn-' + year).classList.add('bg-blue-600', 'text-white');
         }
 
-        // Show 2024 year by default on page load
+        // Show 2024 year by default
         window.onload = function() {
             showYear('2024');
         }
-    </script>
-</body>
-</html>
-    <script>
-        feather.replace();
-        
-        function showYear(year) {
-            // Hide all year content
-            document.querySelectorAll('.year-content').forEach(content => {
-                content.classList.add('hidden');
-            });
-            
-            // Show selected year content
-            document.getElementById('year-' + year).classList.remove('hidden');
-            
-            // Reset all button styles
-            document.querySelectorAll('button[id^="btn-"]').forEach(button => {
-                button.classList.remove('bg-blue-600', 'text-white');
-                button.classList.add('bg-gray-200', 'text-gray-700');
-            });
-            
-            // Style active button
-            document.getElementById('btn-' + year).classList.remove('bg-gray-200', 'text-gray-700');
-            document.getElementById('btn-' + year).classList.add('bg-blue-600', 'text-white');
-        }
-
-        // Show 2024 year by default on page load
-        window.onload = function() {
-            showYear('2024');
-        }
-    </script>
-</body>
-</html>
-
-    <script>
-        feather.replace();
     </script>
 </body>
 </html>

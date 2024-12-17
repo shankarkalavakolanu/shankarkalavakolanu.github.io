@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantum Leap Robotics - Bhavanishankar Kalavakolanu</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js"></script>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="text-xl font-bold text-blue-600">Bhavanishankar K.</a>
+                <div class="flex space-x-4">
+                    <a href="buckeye-vertical.html" class="px-3 py-2 rounded-lg hover:bg-gray-100">Buckeye Vertical</a>
+                    <a href="quantum-leap.html" class="px-3 py-2 rounded-lg hover:bg-gray-100">Quantum Leap</a>
+                    <a href="dreaming-falcon.html" class="px-3 py-2 rounded-lg hover:bg-gray-100">Dreaming Falcon</a>
+                    <a href="capstone.html" class="px-3 py-2 rounded-lg hover:bg-gray-100">Senior Capstone</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Project Hero Section -->
+    <header class="bg-gradient-to-r from-blue-600 to-blue-800 text-white">
+        <div class="container mx-auto px-6 py-16">
+            <h1 class="text-4xl font-bold mb-4">Quantum Leap Robotics</h1>
+            <p class="text-xl mb-4">FIRST Tech Challenge Team 8719</p>
+            <div class="flex items-center space-x-4">
+                <span class="bg-blue-500 px-3 py-1 rounded-full text-sm">2014-2021</span>
+                <span class="bg-blue-500 px-3 py-1 rounded-full text-sm">Team Captain</span>
+                <span class="bg-blue-500 px-3 py-1 rounded-full text-sm">4x World Championship Qualifier</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <section class="container mx-auto px-6 py-16">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Main Content Column -->
+            <div class="lg:col-span-2 space-y-8">
+                <!-- Overview -->
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h2 class="text-2xl font-bold mb-4">Journey Overview</h2>
+                    <p class="text-gray-600 mb-4">Led Team 8719 through multiple successful seasons, developing innovative robotics solutions and achieving consistent excellence in competition. Recognized as a Dean's List Semi-Finalist for outstanding technical leadership and STEM advocacy.</p>
+                    
+                    <!-- Key Achievements -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h3 class="font-bold text-lg text-blue-600">4x</h3>
+                            <p class="text-sm text-gray-600">World Championship Qualifications</p>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h3 class="font-bold text-lg text-blue-600">5x</h3>
+                            <p class="text-sm text-gray-600">State Finals Appearances</p>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h3 class="font-bold text-lg text-blue-600">1st</h3>
+                            <p class="text-sm text-gray-600">Four-Wheel Odometry System</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Technical Innovations -->
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h2 class="text-2xl font-bold mb-4">Technical Innovations</h2>
+                    
+                    <div class="space-y-6">
+                        <!-- Navigation System -->
+                        <div>
+                            <h3 class="text-xl font-bold mb-3">Advanced Navigation System</h3>
+                            <p class="text-gray-600 mb-3">Pioneered the first four-wheel odometry system in FIRST Tech Challenge.</p>
+                            <ul class="list-disc list-inside text-gray-600 space-y-2">
+                                <li>Integrated four dead-wheel encoders with Kalman filter</li>
+                                <li>Developed custom position estimation algorithms</li>
+                                <li>Implemented advanced autonomous navigation</li>
+                            </ul>
+                        </div>
+
+                        <!-- Control Systems -->
+                        <div>
+                            <h3 class="text-xl font-bold mb-3">Robot Control Architecture</h3>
+                            <p class="text-gray-600 mb-3">Developed sophisticated control systems for precise robot manipulation.</p>
+                            <ul class="list-disc list-inside text-gray-600 space-y-2">
+                                <li>Multi-threaded Java implementation</li>
+                                <li>Advanced sensor fusion algorithms</li>
+                                <li>Real-time performance optimization</li>
+                            </ul>
+                        </div>
+
+                        <!-- Mechanical Innovation -->
+                        <div>
+                            <h3 class="text-xl font-bold mb-3">Mechanical Design</h3>
+                            <p class="text-gray-600 mb-3">Implemented rigorous engineering design process for robot development.</p>
+                            <ul class="list-disc list-inside text-gray-600 space-y-2">
+                                <li>Rapid prototyping and iteration</li>
+                                <li>Custom mechanism development</li>
+                                <li>Optimized mechanical sub-assemblies</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Season Highlights -->
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h2 class="text-2xl font-bold mb-8">Season Highlights</h2>
+                    
+                    <div class="flex flex-wrap gap-4 mb-8">
+                        <button onclick="showSeason('2020')" id="btn-2020" 
+                            class="px-6 py-2 rounded-full font-semibold bg-blue-600 text-white hover:bg-blue-700 transition-colors">
+                            2020-2021 (World Record)
+                        </button>
+                        <button onclick="showSeason('2019')" id="btn-2019" 
+                            class="px-6 py-2 rounded-full font-semibold bg-gray-200 text-gray-700 hover:bg-gray-300 transition-colors">
+                            2019-2020
+                        </button>
+                        <button onclick="showSeason('2018')" id="btn-2018" 
+                            class="px-6 py-2 rounded-full font-semibold bg-gray-200 text-gray-700 hover:bg-gray-300 transition-colors">
+                            2018-2019
+                        </button>
+                        <!--<button onclick="showSeason('2017')" id="btn-2017" 
+                            class="px-6 py-2 rounded-full font-semibold bg-gray-200 text-gray-700 hover:bg-gray-300 transition-colors">
+                            2017-2018
+                        </button>-->
+                        <button onclick="showSeason('2014')" id="btn-2014" 
+                            class="px-6 py-2 rounded-full font-semibold bg-gray-200 text-gray-700 hover:bg-gray-300 transition-colors">
+                            2014-2018
+                        </button>
+                    </div>
+
+                    <!-- Season Content -->
+                    <div>
+                        <!-- 2020-2021 Season -->
+                        <div id="season-2020" class="season-content">
+                            
+                            <p class="text-gray-600 mb-3">Set world record for autonomous scoring capabilities and achieved World Championship qualification, while implementing ground-breaking four-wheel odometry system.</p>
+                            
+                            <!--<p class="text-xl font-bold mb-3">Gallery</p>-->
+                            <!-- YouTube Video -->
+                            <div class="relative w-full mb-6" style="padding-top: 56.25%">
+                                <iframe 
+                                    class="absolute top-0 left-0 w-full h-full rounded-lg"
+                                    src="https://www.youtube.com/embed/MfgYiEp86J8"
+                                    title="World Record Performance"
+                                    frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen>
+                                </iframe>
+                            </div>
+
+                            <div class="space-y-6">
+                                <div>
+                                    <h4 class="font-bold mb-2">Key Achievements:</h4>
+                                    <ul class="list-disc list-inside text-gray-600">
+                                        <li>#1 Ranked Team in Ohio</li>
+                                        <li>World Record Performance</li>
+                                        <li>Advanced Autonomous Implementation</li>
+                                        <li>World Championship Qualification</li>
+                                    </ul>
+                                </div>
+
+                                <div>
+                                    <h4 class="font-bold mb-2">Technical Innovations:</h4>
+                                    <ul class="list-disc list-inside text-gray-600">
+                                        <li>First Four-Wheel Odometry System in FTC</li>
+                                        <li>Innovative Linkage Powered Design</li>
+                                        <li><0.1 Second 3 ring realease</li>
+                                        <li>Custom Odometry System</li>
+                                        <li>Advanced Path Planning</li>
+                                        <li>Multi-threaded Control Systems</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 2019-2020 Season -->
+                        <div id="season-2019" class="season-content hidden">
+                            
+                            <p class="text-gray-600 mb-3">Won State Inspire Award and qualified for World Championship.</p>
+                            <p class="text-xl font-bold mb-3">Gallery</p>
+                            <div class="mt-4 mb-6 flex gap-4 justify-center">
+                                <img 
+                                    src="/Images/skystone_robot.jpg"
+                                    alt="Buckeye Vertical First Year"
+                                    class="w-1/2 rounded-lg shadow-md object-cover mx-auto"
+                                />
+                                <img 
+                                    src="/Images/Full_Team_Inspire_Pic.jpg"
+                                    alt="Buckeye Vertical First Year"
+                                    class="w-1/2 rounded-lg shadow-md object-cover mx-auto"
+                                />
+                            </div>
+
+                            <div class="mt-4 mb-6 flex gap-4 justify-center">
+                                <img 
+                                    src="/Images/Aura.jpg"
+                                    alt="Buckeye Vertical First Year"
+                                    class="w-1/2 rounded-lg shadow-md object-cover mx-auto"
+                                />
+                                <img 
+                                    src="/Images/skystone_cad.jpg"
+                                    alt="Buckeye Vertical First Year"
+                                    class="w-1/2 rounded-lg shadow-md object-cover mx-auto"
+                                />
+                            </div>
+
+                            <div class="space-y-6">
+                                <div>
+                                    <h4 class="font-bold mb-2">Key Achievements:</h4>
+                                    <ul class="list-disc list-inside text-gray-600">
+                                        <li>State Inspire Award Winners</li>
+                                        <li>World Championship Qualification</li>
+                                        <li>Innovative Stone Re-Alignment System</li>
+                                    </ul>
+                                </div>
+
+                                <div>
+                                    <h4 class="font-bold mb-2">Technical Innovations:</h4>
+                                    <ul class="list-disc list-inside text-gray-600">
+
+                                        <li>Custom Vision Processing Pipeline</li>
+                                        <li>Advanced Path Planning Algorithms</li>
+                                        <li>Real-time Position Tracking</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 2018-2019 Season -->
+                        <div id="season-2018" class="season-content hidden">
+                            <p class="text-gray-600 mb-3">State Championship victory with advanced mineral detection capabilities.</p>
+                            <p class="text-xl font-bold mb-3">Gallery</p>
+                            <div class="mt-4 mb-6 flex gap-4 justify-center">
+                                <img 
+                                    src="/Images/Rover_Robot.jpg"
+                                    alt="Buckeye Vertical First Year"
+                                    class="w-1/2 rounded-lg shadow-md object-cover mx-auto"
+                                />
+                                <img 
+                                    src="/Images/Rover_Award+bot.jpg"
+                                    alt="Buckeye Vertical First Year"
+                                    class="w-1/2 rounded-lg shadow-md object-cover mx-auto"
+                                />
+                            </div>
+
+                            <div class="mt-4 mb-6 flex gap-4 justify-center">
+                                <img 
+                                    src="/Images/Rover_Robot_Cad.png"
+                                    alt="Buckeye Vertical First Year"
+                                    class="w-1/3 rounded-lg shadow-md object-cover mx-auto"
+                                />
+                                <div class="relative w-full">
+                                    <iframe 
+                                        class="absolute top-0 left-0 w-full h-full rounded-lg"
+                                        src="https://www.youtube.com/embed/J3seoxEbnI8?si=Csy-6RGS4bBDeyxB"
+                                        title="YouTube video player"
+                                        frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        referrerpolicy="strict-origin-when-cross-origin"
+                                        allowfullscreen>
+                                    </iframe>
+                                </div>
+                            </div>
+
+                            <div class="space-y-6">
+                                <div>
+                                    <h4 class="font-bold mb-2">Key Achievements:</h4>
+                                    <ul class="list-disc list-inside text-gray-600">
+                                        <li>World Championship Qualification</li>
+                                        <li>Advanced Mineral Detection System</li>
+                                        <li>Innovative Mineral Filtering Process</li>
+                                    </ul>
+                                </div>
+
+                                <div>
+                                    <h4 class="font-bold mb-2">Technical Innovations:</h4>
+                                    <ul class="list-disc list-inside text-gray-600">
+                                        <li>Custom Computer Vision System</li>
+                                        <li>Automated Game Element Detection</li>
+                                        <li>Efficient End-Game Automation</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--<div id="season-2017" class="season-content hidden">
+                            <p class="text-gray-600 mb-6">Early years of team formation and growth, establishing foundation for future success.</p>
+                            
+                            <div class="space-y-6">
+                                <div>
+                                    <h4 class="font-bold mb-2">Key Achievements:</h4>
+                                    <ul class="list-disc list-inside text-gray-600">
+                                        <li>Team Formation and Initial Growth</li>
+                                        <li>First State Championship Qualification</li>
+                                        <li>Development of Core Team Structure</li>
+                                        <li>Early Technical Innovations</li>
+                                    </ul>
+                                </div>
+                    
+                                <div>
+                                    <h4 class="font-bold mb-2">Technical Milestones:</h4>
+                                    <ul class="list-disc list-inside text-gray-600">
+                                        <li>Basic Autonomous Implementation</li>
+                                        <li>Initial Sensor Integration</li>
+                                        <li>Fundamental Control Systems</li>
+                                        <li>Early Mechanical Designs</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>-->
+                        <div id="season-2014" class="season-content hidden">
+                            <p class="text-gray-600 mb-6">Early years of team formation and growth, establishing foundation for future success.</p>
+                            
+                            <div class="space-y-6">
+                                <div>
+                                    <h4 class="font-bold mb-2">Key Achievements:</h4>
+                                    <ul class="list-disc list-inside text-gray-600">
+                                        <li>Team Formation and Initial Growth</li>
+                                        <li>First World Championship Qualification in 2017</li>
+                                        <li>First State Championship Qualification in 2017</li>
+                                        <li>Development of Core Team Structure</li>
+                                        <li>Early Technical Innovations</li>
+                                    </ul>
+                                </div>
+                    
+                                <div>
+                                    <h4 class="font-bold mb-2">Technical Milestones:</h4>
+                                    <ul class="list-disc list-inside text-gray-600">
+                                        <li>Basic Autonomous Implementation</li>
+                                        <li>Initial Sensor Integration</li>
+                                        <li>Fundamental Control Systems</li>
+                                        <li>Early Mechanical Designs</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="space-y-8">
+                <!-- Technologies Used -->
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="text-xl font-bold mb-4">Technologies Used</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">SOLIDWORKS</span>
+                        <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Java</span>
+                        <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Android Studio</span>
+                        <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">OpenCV</span>
+                        <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">CAD</span>
+                        <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Git</span>
+                        <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Sensor Fusion</span>
+                        <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">3D Printing</span>
+                        <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Laser Cutting</span>
+                        <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">CNC</span>
+                        <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Water Jet</span>
+                    </div>
+                </div>
+
+                <!-- Awards & Recognition -->
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="text-xl font-bold mb-4">Awards & Recognition</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li>Dean's List Semi-Finalist</li>
+                        <li>10X Inspire Award Winners</li>
+                        <li>12X Tournament Winners</li>
+                        <li>10X Winning Alliance Captains</li>
+                        <li>Software Innovation Award - Maryland Tech Invitational</li>
+                        <li>Multiple Think Award Winners</li>
+                        <li>Control Award Winners</li>
+                        <li>State Championship Winners</li>
+                    </ul>
+                </div>
+
+                <!-- Robot Gallery -->
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="text-xl font-bold mb-4">Robot Gallery</h3>
+                    <div class="space-y-4">
+                        <div class="bg-gray-200 h-48 rounded-lg flex items-center justify-center overflow-hidden">
+                            <img 
+                                src="Images/Robot+Trophies.jpg" 
+                                alt="Main robot image"
+                                class="w-full h-full object-cover"
+                            />
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="bg-gray-200 h-32 rounded-lg flex items-center justify-center overflow-hidden">
+                                <img 
+                                    src="Images/V2_lindexer.jpg"
+                                    alt="Robot image 1" 
+                                    class="w-full h-full object-cover"
+                                />
+                            </div>
+                            <div class="bg-gray-200 h-32 rounded-lg flex items-center justify-center overflow-hidden">
+                                <img 
+                                    src="Images/Just_students_inspire_pic.jpg"
+                                    alt="Robot image 2"
+                                    class="w-full h-full object-cover"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Media Gallery Section -->
+  
+
+    <script>
+        feather.replace();
+    </script>
+    <script>
+        function showSeason(season) {
+            // Hide all season content
+            document.querySelectorAll('.season-content').forEach(content => {
+                content.classList.add('hidden');
+            });
+            
+            // Show selected season content
+            document.getElementById('season-' + season).classList.remove('hidden');
+            
+            // Reset all button styles
+            document.querySelectorAll('button[id^="btn-"]').forEach(button => {
+                button.classList.remove('bg-blue-600', 'text-white');
+                button.classList.add('bg-gray-200', 'text-gray-700');
+            });
+            
+            // Style active button
+            document.getElementById('btn-' + season).classList.remove('bg-gray-200', 'text-gray-700');
+            document.getElementById('btn-' + season).classList.add('bg-blue-600', 'text-white');
+        }
+    
+        // Show 2020 season by default on page load
+        window.onload = function() {
+            showSeason('2020');
+        }
+    </script>
+</body>
+</html>

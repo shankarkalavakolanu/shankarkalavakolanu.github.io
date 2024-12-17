@@ -1,0 +1,49 @@
+<svg viewBox="0 0 600 338" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background -->
+    <rect x="0" y="0" width="600" height="338" fill="#2B3A67"/>
+    
+    <!-- Neural Network Pattern -->
+    <g transform="translate(100,-40)" stroke="#6E88A1" stroke-width="2" opacity="0.3">
+        <circle cx="160" cy="140" r="4" fill="#6E88A1"/>
+        <circle cx="240" cy="140" r="4" fill="#6E88A1"/>
+        <circle cx="200" cy="180" r="4" fill="#6E88A1"/>
+        <circle cx="140" cy="220" r="4" fill="#6E88A1"/>
+        <circle cx="260" cy="220" r="4" fill="#6E88A1"/>
+        <line x1="160" y1="140" x2="200" y2="180" />
+        <line x1="240" y1="140" x2="200" y2="180" />
+        <line x1="200" y1="180" x2="140" y2="220" />
+        <line x1="200" y1="180" x2="260" y2="220" />
+    </g>
+    
+    <!-- Falcon/Drone -->
+    <g transform="translate(100,-40)">
+        <path d="M 200 120 
+                 L 280 220 
+                 L 260 260 
+                 L 200 240 
+                 L 140 260 
+                 L 120 220 
+                 Z" 
+              fill="#4A90E2" 
+              stroke="#ffffff" 
+              stroke-width="3"/>
+        
+        <!-- Propeller Hints -->
+        <circle cx="140" cy="200" r="8" fill="#ffffff"/>
+        <circle cx="260" cy="200" r="8" fill="#ffffff"/>
+    </g>
+    
+    <!-- Text -->
+    <text x="300" y="250" 
+          font-family="Arial, sans-serif" 
+          font-size="28" 
+          font-weight="bold" 
+          fill="#ffffff" 
+          text-anchor="middle">DREAMING FALCON</text>
+    
+    <text x="300" y="275" 
+          font-family="Arial, sans-serif" 
+          font-size="14" 
+          fill="#6E88A1" 
+          text-anchor="middle">Autonomous Drone Control</text>
+</svg>

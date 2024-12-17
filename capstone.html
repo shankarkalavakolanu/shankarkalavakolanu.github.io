@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drone Obstacle Avoidance System - Senior Capstone</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js"></script>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="text-xl font-bold text-blue-600">Bhavanishankar K.</a>
+                <div class="flex space-x-4">
+                    <a href="buckeye-vertical.html" class="px-3 py-2 rounded-lg hover:bg-gray-100">Buckeye Vertical</a>
+                    <a href="quantum-leap.html" class="px-3 py-2 rounded-lg hover:bg-gray-100">Quantum Leap</a>
+                    <a href="dreaming-falcon.html" class="px-3 py-2 rounded-lg hover:bg-gray-100">Dreaming Falcon</a>
+                    <a href="capstone.html" class="px-3 py-2 rounded-lg hover:bg-gray-100">Senior Capstone</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Project Hero Section -->
+    <header class="bg-gradient-to-r from-blue-600 to-blue-800 text-white">
+        <div class="container mx-auto px-6 py-16">
+            <h1 class="text-4xl font-bold mb-4">Autonomous Drone Obstacle Avoidance System</h1>
+            <p class="text-xl mb-4">Senior Capstone Project - The Ohio State University</p>
+            <div class="flex items-center space-x-4">
+                <span class="bg-blue-500 px-3 py-1 rounded-full text-sm">2024-2025</span>
+                <span class="bg-blue-500 px-3 py-1 rounded-full text-sm">Robotics</span>
+                <span class="bg-blue-500 px-3 py-1 rounded-full text-sm">Autonomous Systems</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Project Content -->
+    <section class="container mx-auto px-6 py-16">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Main Content -->
+            <div class="lg:col-span-2 space-y-8">
+                <!-- Project Overview -->
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h2 class="text-2xl font-bold mb-4">Project Overview</h2>
+                    <p class="text-gray-600 mb-6">Developing a comprehensive obstacle avoidance system for Buckeye Vertical's competition drone, enabling autonomous navigation in dynamic environments with multiple UAVs. The system uses advanced sensor fusion and real-time path planning to ensure safe operation during high-stakes drone competitions.</p>
+                    
+                    <!-- Key Features -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h3 class="font-bold text-lg text-blue-600">360° Detection</h3>
+                            <p class="text-sm text-gray-600">Omni-directional obstacle detection using LIDAR technology</p>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h3 class="font-bold text-lg text-blue-600">20 m/s</h3>
+                            <p class="text-sm text-gray-600">Capable of avoiding obstacles at high relative velocities</p>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h3 class="font-bold text-lg text-blue-600">1m Accuracy</h3>
+                            <p class="text-sm text-gray-600">Precise object localization in 3D space</p>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h3 class="font-bold text-lg text-blue-600">100ms Latency</h3>
+                            <p class="text-sm text-gray-600">Real-time processing and response</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Technical Implementation -->
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h2 class="text-2xl font-bold mb-4">Technical Implementation</h2>
+                    
+                    <div class="space-y-6">
+                        <!-- Detection System -->
+                        <div>
+                            <h3 class="text-xl font-bold mb-3">Detection System</h3>
+                            <p class="text-gray-600 mb-3">Implemented a LIDAR-based detection system with:</p>
+                            <ul class="list-disc list-inside text-gray-600 space-y-2">
+                                <li>40m detection range for 1m³ objects</li>
+                                <li>360° horizontal field of view</li>
+                                <li>Custom point cloud clustering algorithms</li>
+                                <li>Vibration-resistant mounting system</li>
+                            </ul>
+                        </div>
+
+                        <!-- Avoidance Algorithm -->
+                        <div>
+                            <h3 class="text-xl font-bold mb-3">Avoidance Algorithm</h3>
+                            <p class="text-gray-600 mb-3">Developed a sophisticated avoidance system featuring:</p>
+                            <ul class="list-disc list-inside text-gray-600 space-y-2">
+                                <li>Dynamic path planning with real-time trajectory updates</li>
+                                <li>Three-dimensional velocity obstacle method</li>
+                                <li>Optimization for minimal deviation from planned path</li>
+                                <li>Fail-safe mechanisms and manual override capability</li>
+                            </ul>
+                        </div>
+
+                        <!-- System Integration -->
+                        <div>
+                            <h3 class="text-xl font-bold mb-3">System Integration</h3>
+                            <p class="text-gray-600 mb-3">Seamless integration with drone systems through:</p>
+                            <ul class="list-disc list-inside text-gray-600 space-y-2">
+                                <li>Custom sensor data pipeline</li>
+                                <li>Real-time processing on Nvidia Jetson</li>
+                                <li>PX4 flight controller integration</li>
+                                <li>Comprehensive testing framework</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="space-y-8">
+                <!-- Technologies Used -->
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="text-xl font-bold mb-4">Technologies Used</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">LIDAR</span>
+                        <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Python</span>
+                        <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">C++</span>
+                        <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">ROS</span>
+                        <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">PX4</span>
+                        <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Gazebo</span>
+                        <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">MATLAB</span>
+                    </div>
+                </div>
+
+                <!-- Key Achievements -->
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="text-xl font-bold mb-4">Key Achievements</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <!--<li>• Successfully tested against both static and dynamic obstacles</li>-->
+                        <li>• Developed comprehensive simulation environment</li>
+                        <li>• Achieved sub-100ms system latency</li>
+                        <li>• Created detailed documentation for future teams</li>
+                    </ul>
+                </div>
+
+                <!-- Project Timeline -->
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="text-xl font-bold mb-4">Project Timeline</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <div class="w-24 text-sm text-gray-600">Oct 2024</div>
+                            <div class="flex-1">Sensor Selection & Testing</div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-24 text-sm text-gray-600">Nov 2024</div>
+                            <div class="flex-1">Algorithm Development</div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-24 text-sm text-gray-600">Jan 2025</div>
+                            <div class="flex-1">System Integration</div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-24 text-sm text-gray-600">Apr 2025</div>
+                            <div class="flex-1">Final Testing & Documentation</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        feather.replace();
+    </script>
+</body>
+</html>

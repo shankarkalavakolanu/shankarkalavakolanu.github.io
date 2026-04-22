@@ -1,0 +1,79 @@
+/* Fonts */
+@import '@fontsource/instrument-serif/400.css';
+@import '@fontsource/instrument-serif/400-italic.css';
+@import '@fontsource-variable/inter';
+@import '@fontsource-variable/jetbrains-mono';
+
+/* Tailwind */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Theme tokens — light mode defaults, dark overrides */
+:root {
+  --color-bg:          #F5EFE2;
+  --color-surface:     #FFFFFF;
+  --color-surface2:    #EDE8DE;
+  --color-border:      #D0C9BA;
+  --color-ink-primary: #1A1815;
+  --color-ink-muted:   #6B6357;
+  --color-gold:        #D4A24C;
+  --color-gold-hover:  #E5B968;
+}
+
+.dark {
+  --color-bg:          #0D0C0A;
+  --color-surface:     #17140F;
+  --color-surface2:    #211C14;
+  --color-border:      #2E2820;
+  --color-ink-primary: #F3ECDD;
+  --color-ink-muted:   #A49A86;
+  --color-gold:        #D4A24C;
+  --color-gold-hover:  #E5B968;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-ink-primary);
+    font-family: 'Inter Variable', 'Inter', system-ui, sans-serif;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  *,
+  *::before,
+  *::after {
+    border-color: var(--color-border);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 2px;
+  }
+}
+
+/* Tab button active/inactive states — used by BV and QL tab components */
+.tab-btn {
+  background-color: var(--color-surface2);
+  color: var(--color-ink-muted);
+  transition: background-color 0.15s ease, color 0.15s ease;
+  border-radius: 9999px;
+  padding: 0.5rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+}
+
+.tab-btn.active {
+  background-color: var(--color-gold);
+  color: var(--color-bg);
+}
+
+.tab-btn:hover:not(.active) {
+  background-color: var(--color-border);
+}

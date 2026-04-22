@@ -1,0 +1,17 @@
+---
+interface Props {
+  color: string;
+  label: string;
+}
+const { color, label } = Astro.props;
+---
+<span
+  class="font-mono text-xs px-3 py-1 rounded-full border-half"
+  style={`
+    background: color-mix(in srgb, ${color} 15%, transparent);
+    color: ${color};
+    border-color: color-mix(in srgb, ${color} 35%, transparent);
+  `}
+>
+  {label}
+</span>

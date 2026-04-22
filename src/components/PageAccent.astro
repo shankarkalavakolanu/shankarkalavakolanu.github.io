@@ -1,0 +1,17 @@
+---
+interface Props {
+  color: string;
+}
+const { color } = Astro.props;
+---
+<!-- 3px company-color stripe under the nav -->
+<div class="w-full h-[3px]" style={`background:${color}`}></div>
+
+<style define:vars={{ accent: color }}>
+  /* Applied via class="hero-glow-ring" on an image element */
+  :global(.hero-glow-ring) {
+    box-shadow:
+      0 0 0 1px color-mix(in srgb, var(--accent) 30%, transparent),
+      0 0 32px 4px color-mix(in srgb, var(--accent) 18%, transparent);
+  }
+</style>

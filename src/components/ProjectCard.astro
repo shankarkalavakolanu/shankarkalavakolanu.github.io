@@ -1,0 +1,42 @@
+---
+interface Props {
+  href: string;
+  accentColor: string;
+  companyLabel: string;
+  title: string;
+  blurb: string;
+  imagePlaceholder?: string;
+}
+const { href, accentColor, companyLabel, title, blurb, imagePlaceholder } = Astro.props;
+---
+<a
+  href={href}
+  class="group block bg-surface rounded-card border border-half overflow-hidden hover:-translate-y-[3px] transition-transform duration-150"
+>
+  <!-- Image area -->
+  <div
+    class="bg-surface2 flex items-center justify-center"
+    style="aspect-ratio: 16/10;"
+  >
+    <span class="font-mono text-xs text-ink-muted text-center px-4 leading-relaxed">
+      {imagePlaceholder ?? '[placeholder: project image]'}
+    </span>
+  </div>
+
+  <!-- Card content -->
+  <div class="p-5">
+    <div class="flex items-center gap-2 mb-3">
+      <span
+        class="w-1.5 h-1.5 rounded-full shrink-0"
+        style={`background: ${accentColor}`}
+      ></span>
+      <span class="font-mono text-[10px] uppercase tracking-[0.08em] text-ink-muted">
+        {companyLabel}
+      </span>
+    </div>
+    <h3 class="text-base font-medium text-ink-primary group-hover:text-gold transition-colors duration-150 mb-1.5">
+      {title}
+    </h3>
+    <p class="text-sm text-ink-muted leading-relaxed">{blurb}</p>
+  </div>
+</a>

@@ -1,0 +1,20 @@
+---
+interface Props {
+  color: string; // pass 'transparent' to suppress glow (Capstone)
+}
+const { color } = Astro.props;
+
+const glow =
+  color === 'transparent'
+    ? 'none'
+    : `0 0 0 1px color-mix(in srgb, ${color} 25%, transparent),
+       0 0 48px 8px color-mix(in srgb, ${color} 12%, transparent)`;
+---
+<div
+  class="w-full rounded-card overflow-hidden bg-surface2 flex items-center justify-center"
+  style={`aspect-ratio: 21/9; box-shadow: ${glow};`}
+>
+  <slot>
+    <span class="font-mono text-xs text-ink-muted">[placeholder: hero image/video]</span>
+  </slot>
+</div>

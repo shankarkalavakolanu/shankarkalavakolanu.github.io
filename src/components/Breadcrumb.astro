@@ -1,0 +1,16 @@
+---
+import AccentChip from './AccentChip.astro';
+
+interface Props {
+  color: string;
+  label: string;
+}
+const { color, label } = Astro.props;
+---
+<div class="flex items-center gap-2 mb-8">
+  <a href="/" class="font-mono text-xs text-ink-muted hover:text-gold transition-colors">
+    work
+  </a>
+  <span class="font-mono text-xs text-ink-muted">/</span>
+  <AccentChip color={color} label={label} uppercase />
+</div>

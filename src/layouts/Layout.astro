@@ -18,15 +18,10 @@ const { title, accentColor = '#D4A24C' } = Astro.props;
   <meta name="description" content="Engineering portfolio of Bhavanishankar Kalavakolanu — aerospace, robotics, GNC, and autonomous systems." />
 </head>
 <body>
-  <!-- No-flash theme init: localStorage wins, else prefers-color-scheme -->
+  <!-- Dark by default. Only localStorage 'light' switches to light mode. -->
   <script is:inline>
-    (function () {
-      var stored = localStorage.getItem('theme');
-      var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      if (stored === 'light' || (!stored && !prefersDark)) {
-        document.documentElement.classList.remove('dark');
-      }
-    })();
+    if (localStorage.getItem('theme') === 'light')
+      document.documentElement.classList.remove('dark');
   </script>
 
   <Nav />

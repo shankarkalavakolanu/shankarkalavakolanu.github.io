@@ -2,10 +2,11 @@
 interface Props {
   value: string;
   label: string;
+  highlight?: boolean;
 }
-const { value, label } = Astro.props;
+const { value, label, highlight = false } = Astro.props;
 ---
-<div class="bg-surface2 p-4 rounded-card">
-  <p class="font-mono font-medium text-lg text-gold">{value}</p>
-  <p class="text-sm text-ink-muted mt-0.5">{label}</p>
+<div class="bg-surface2 p-5 rounded-card">
+  <p class="font-mono text-xs uppercase tracking-[0.08em] text-ink-muted mb-2">{label}</p>
+  <p class={`font-medium text-xl ${highlight ? 'text-gold' : 'text-ink-primary'}`}>{value}</p>
 </div>

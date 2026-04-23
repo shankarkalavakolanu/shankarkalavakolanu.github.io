@@ -1,8 +1,36 @@
 ---
 ---
-<footer class="border-t border-half mt-16 py-8">
-  <div class="max-w-site mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-ink-muted text-sm font-mono">
-    <span>© 2025 Bhavanishankar Kalavakolanu</span>
-    <span class="text-xs">Built with Astro + Tailwind</span>
+<footer class="border-t border-half mt-20">
+  <div class="max-w-site mx-auto px-6 py-10">
+
+    <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-6 mb-8">
+      <!-- Left: wordmark + location -->
+      <div>
+        <p class="font-serif text-lg text-ink-primary">
+          Shankar Kalavakolanu<span class="text-gold">.</span>
+        </p>
+        <p class="text-sm text-ink-muted mt-1">Dallas, TX</p>
+      </div>
+
+      <!-- Right: contact links -->
+      <div class="flex items-center gap-6">
+        <a
+          href="mailto:kvvnbs@gmail.com"
+          class="text-sm text-ink-muted hover:text-gold transition-colors"
+        >Email</a>
+        <a
+          href="https://www.linkedin.com/in/bhavanishankarkalavakolanu/"
+          target="_blank" rel="noopener noreferrer"
+          class="text-sm text-ink-muted hover:text-gold transition-colors"
+        >LinkedIn</a>
+        <a
+          href="https://github.com/shankarkalavakolanu"
+          target="_blank" rel="noopener noreferrer"
+          class="text-sm text-ink-muted hover:text-gold transition-colors"
+        >GitHub</a>
+      </div>
+    </div>
+
+    <p class="font-mono text-xs text-ink-muted text-center">Built with Astro + Tailwind</p>
   </div>
 </footer>

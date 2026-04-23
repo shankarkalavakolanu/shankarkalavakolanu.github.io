@@ -1,109 +1,132 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import PageAccent from '../components/PageAccent.astro';
-import AccentChip from '../components/AccentChip.astro';
-import TechBadge from '../components/TechBadge.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import HeroImage from '../components/HeroImage.astro';
+import StatCard from '../components/StatCard.astro';
+import SectionLabel from '../components/SectionLabel.astro';
 import { ACCENTS } from '../lib/accents';
 
 const accent = ACCENTS.dreamingFalcon;
 ---
-<Layout title="Dreaming Falcon — Bhavanishankar Kalavakolanu" accentColor={accent}>
+<Layout title="DREAMING Falcon — Shankar Kalavakolanu" accentColor={accent}>
 
   <PageAccent color={accent} />
 
-  <!-- Hero -->
-  <header class="bg-surface border-b border-half">
-    <div class="max-w-site mx-auto px-6 py-12 md:py-16">
-      <div class="flex flex-wrap items-center gap-2 mb-4">
-        <AccentChip color={accent} label="Research Project" />
-        <AccentChip color={accent} label="Machine Learning" />
-        <AccentChip color={accent} label="Autonomous Systems" />
-      </div>
-      <h1 class="font-serif text-3xl md:text-4xl text-ink-primary mb-2">Dreaming Falcon</h1>
-      <p class="text-ink-muted text-lg">Advanced Drone Control Using DREAMER Algorithm</p>
-    </div>
+  <!-- ── Text Hero ──────────────────────────────────────────────────────────── -->
+  <header class="max-w-site mx-auto px-6 pt-12 pb-10 md:pt-16 md:pb-12">
+    <Breadcrumb color={accent} label="Published · ARC" />
+
+    <h1 class="font-serif text-4xl md:text-5xl text-ink-primary leading-[1.15] mb-4">
+      Physics-informed RL<br />
+      for quadrotor <span class="text-gold">control.</span>
+    </h1>
+
+    <p class="text-base md:text-lg text-ink-muted max-w-[500px] leading-relaxed">
+      Published at AIAA DCASS 2025 while at Ohio State's Aerospace Research Center.{' '}
+      <a
+        href="https://arxiv.org/abs/2511.18243"
+        target="_blank" rel="noopener noreferrer"
+        class="text-gold hover:text-gold-hover transition-colors inline-flex items-center gap-1"
+      >
+        arXiv:2511.18243
+        <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24"
+          fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+        </svg>
+      </a>
+    </p>
   </header>
 
-  <!-- Main content -->
-  <main class="max-w-site mx-auto px-6 py-12 md:py-16">
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+  <!-- ── Hero Image ─────────────────────────────────────────────────────────── -->
+  <div class="max-w-site mx-auto px-6 pb-10">
+    <HeroImage color={accent}>
+      <span class="font-mono text-xs text-ink-muted">[placeholder: DREAMING Falcon figure or simulation render]</span>
+    </HeroImage>
+  </div>
 
-      <!-- Left: 2/3 -->
-      <div class="lg:col-span-2 space-y-8">
-
-        <!-- Project Overview -->
-        <div class="bg-surface rounded-card border border-half p-6">
-          <h2 class="font-serif text-2xl text-ink-primary mb-4">Project Overview</h2>
-          <p class="text-ink-muted">Developing an advanced drone control system utilizing model-based reinforcement learning to create a self-optimizing flight controller. The system continuously learns from motor outputs and sensor feedback to improve flight performance and adapt to changing conditions in real-time.</p>
-        </div>
-
-        <!-- Technical Implementation -->
-        <div class="bg-surface rounded-card border border-half p-6 space-y-8">
-          <h2 class="font-serif text-2xl text-ink-primary">Technical Implementation</h2>
-
-          <div>
-            <h3 class="font-medium text-ink-primary mb-2">DREAMER Algorithm Integration</h3>
-            <p class="text-sm text-ink-muted mb-3">Implemented a sophisticated control system that fuses sensor data with motor outputs for optimized performance.</p>
-            <ul class="space-y-2 text-sm text-ink-muted list-disc list-inside">
-              <li>Real-time sensor fusion from multiple input sources</li>
-              <li>Adaptive motor output optimization</li>
-              <li>Environmental condition compensation</li>
-              <li>Dynamic performance adjustment</li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 class="font-medium text-ink-primary mb-2">Sensor Fusion System</h3>
-            <p class="text-sm text-ink-muted mb-3">Developed comprehensive sensor integration for enhanced environmental awareness.</p>
-            <ul class="space-y-2 text-sm text-ink-muted list-disc list-inside">
-              <li>IMU data processing for attitude estimation</li>
-              <li>GPS integration for position tracking</li>
-              <li>Barometric pressure for altitude control</li>
-              <li>Motor telemetry for performance monitoring</li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 class="font-medium text-ink-primary mb-2">Adaptive Control Framework</h3>
-            <p class="text-sm text-ink-muted mb-3">Created a dynamic control system that learns and adapts to changing conditions.</p>
-            <ul class="space-y-2 text-sm text-ink-muted list-disc list-inside">
-              <li>Real-time performance optimization</li>
-              <li>Environmental disturbance rejection</li>
-              <li>Autonomous parameter tuning</li>
-              <li>Fault detection and compensation</li>
-            </ul>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Right sidebar -->
-      <div class="space-y-6">
-
-        <!-- Technologies -->
-        <div class="bg-surface rounded-card border border-half p-6">
-          <h3 class="font-medium text-ink-primary mb-4">Technologies Used</h3>
-          <div class="flex flex-wrap gap-2">
-            {['Python','TensorFlow','ROS','MATLAB','Simulink','PX4','Sensor Fusion'].map(t => (
-              <TechBadge label={t} />
-            ))}
-          </div>
-        </div>
-
-        <!-- Key Features -->
-        <div class="bg-surface rounded-card border border-half p-6">
-          <h3 class="font-medium text-ink-primary mb-4">Key Features</h3>
-          <ul class="space-y-2 text-sm text-ink-muted">
-            <li>• Real-time adaptation to environmental changes</li>
-            <li>• Advanced sensor fusion implementation</li>
-            <li>• Autonomous performance optimization</li>
-            <li>• Dynamic motor control adjustment</li>
-            <li>• Robust disturbance rejection</li>
-          </ul>
-        </div>
-
-      </div>
+  <!-- ── Stats ──────────────────────────────────────────────────────────────── -->
+  <div class="max-w-site mx-auto px-6 pb-16">
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+      <StatCard label="Venue"  value="AIAA DCASS 2025"  highlight />
+      <StatCard label="arXiv"  value="2511.18243" />
+      <StatCard label="Role"   value="Co-author" />
+      <StatCard label="Focus"  value="6-DOF quadrotor" />
     </div>
+  </div>
+
+  <main class="max-w-site mx-auto px-6 pb-20 space-y-16">
+
+    <!-- ── Lay Summary placeholder ───────────────────────────────────────────── -->
+    <section>
+      <SectionLabel label="Summary" />
+
+      <h2 class="font-serif text-2xl md:text-3xl text-ink-primary mb-4">
+        [PLACEHOLDER: lay summary heading]
+      </h2>
+      <p class="text-ink-muted max-w-2xl leading-relaxed">
+        [PLACEHOLDER: one or two paragraphs explaining what the paper does in plain language —
+        what problem it solves, what the DREAMING algorithm is, and what the quadrotor result
+        demonstrates.]
+      </p>
+    </section>
+
+    <!-- ── Technical Summary placeholder ─────────────────────────────────────── -->
+    <section>
+      <SectionLabel label="Technical Approach" />
+
+      <h2 class="font-serif text-2xl md:text-3xl text-ink-primary mb-4">
+        [PLACEHOLDER: technical section heading]
+      </h2>
+      <p class="text-ink-muted max-w-2xl leading-relaxed">
+        [PLACEHOLDER: technical summary — model architecture, physics-informed priors,
+        training setup, simulation environment, key results and metrics.]
+      </p>
+    </section>
+
+    <!-- ── Authors & Venue placeholder ───────────────────────────────────────── -->
+    <section>
+      <SectionLabel label="Publication" />
+
+      <div class="bg-surface rounded-card border border-half p-6 max-w-xl">
+        <h3 class="font-medium text-ink-primary mb-3 leading-snug">
+          DREAMING Falcon: Physics-Informed Model-Based Reinforcement Learning
+          for Adaptive Quadrotor Control
+        </h3>
+        <p class="text-sm text-ink-muted mb-1">[PLACEHOLDER: author list]</p>
+        <p class="font-mono text-xs text-ink-muted uppercase tracking-[0.08em] mb-4">
+          AIAA Dayton-Cincinnati Aerospace Sciences Symposium (DCASS) 2025
+        </p>
+        <a
+          href="https://arxiv.org/abs/2511.18243"
+          target="_blank" rel="noopener noreferrer"
+          class="inline-flex items-center gap-1.5 text-sm text-gold hover:text-gold-hover transition-colors font-mono"
+        >
+          arXiv:2511.18243
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+          </svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- ── Figures gallery placeholder ───────────────────────────────────────── -->
+    <section>
+      <SectionLabel label="Figures" />
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {Array.from({ length: 4 }).map(() => (
+          <div
+            class="rounded-card bg-surface2 flex items-center justify-center"
+            style="aspect-ratio: 4/3;"
+          >
+            <span class="font-mono text-xs text-ink-muted">[placeholder: paper figure]</span>
+          </div>
+        ))}
+      </div>
+    </section>
+
   </main>
 
 </Layout>

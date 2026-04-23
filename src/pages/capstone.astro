@@ -1,150 +1,84 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import PageAccent from '../components/PageAccent.astro';
-import AccentChip from '../components/AccentChip.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import HeroImage from '../components/HeroImage.astro';
 import StatCard from '../components/StatCard.astro';
-import TechBadge from '../components/TechBadge.astro';
+import SectionLabel from '../components/SectionLabel.astro';
 import { ACCENTS } from '../lib/accents';
 
-const accent = ACCENTS.capstone;
+const accent = ACCENTS.capstone; // gold only
 ---
-<Layout title="Senior Capstone — Bhavanishankar Kalavakolanu" accentColor={accent}>
+<Layout title="Senior Capstone — Shankar Kalavakolanu" accentColor={accent}>
 
   <PageAccent color={accent} />
 
-  <!-- Hero -->
-  <header class="bg-surface border-b border-half">
-    <div class="max-w-site mx-auto px-6 py-12 md:py-16">
-      <div class="flex flex-wrap items-center gap-2 mb-4">
-        <AccentChip color={accent} label="2024–2025" />
-        <AccentChip color={accent} label="Robotics" />
-        <AccentChip color={accent} label="Autonomous Systems" />
-      </div>
-      <h1 class="font-serif text-3xl md:text-4xl text-ink-primary mb-2">Autonomous Drone Obstacle Avoidance System</h1>
-      <p class="text-ink-muted text-lg">Senior Capstone Project — The Ohio State University</p>
-    </div>
+  <!-- ── Text Hero ──────────────────────────────────────────────────────────── -->
+  <header class="max-w-site mx-auto px-6 pt-12 pb-10 md:pt-16 md:pb-12">
+    <Breadcrumb color={accent} label="Capstone" />
+
+    <h1 class="font-serif text-4xl md:text-5xl text-ink-primary leading-[1.15] mb-4">
+      [PLACEHOLDER: capstone headline line 1]<br />
+      [PLACEHOLDER: line 2, last word in <span class="text-gold">gold.]</span>
+    </h1>
+    <p class="text-base md:text-lg text-ink-muted max-w-[500px] leading-relaxed">
+      [PLACEHOLDER: capstone sub-line — project context, OSU, year, team or solo]
+    </p>
   </header>
 
-  <!-- Main content -->
-  <main class="max-w-site mx-auto px-6 py-12 md:py-16">
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+  <!-- ── Hero Image (no glow — gold-on-gold indistinguishable) ──────────────── -->
+  <div class="max-w-site mx-auto px-6 pb-10">
+    <HeroImage color="transparent">
+      <span class="font-mono text-xs text-ink-muted">[placeholder: capstone project image]</span>
+    </HeroImage>
+  </div>
 
-      <!-- Left: 2/3 -->
-      <div class="lg:col-span-2 space-y-8">
-
-        <!-- Project Overview -->
-        <div class="bg-surface rounded-card border border-half p-6">
-          <h2 class="font-serif text-2xl text-ink-primary mb-4">Project Overview</h2>
-          <p class="text-ink-muted mb-6">Developing a comprehensive obstacle avoidance system for Buckeye Vertical's competition drone, enabling autonomous navigation in dynamic environments with multiple UAVs. The system uses advanced sensor fusion and real-time path planning to ensure safe operation during high-stakes drone competitions.</p>
-
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div class="bg-surface2 p-4 rounded-card">
-              <p class="font-mono font-medium text-gold text-lg">360° Detection</p>
-              <p class="text-sm text-ink-muted mt-0.5">Omni-directional obstacle detection using LIDAR technology</p>
-            </div>
-            <div class="bg-surface2 p-4 rounded-card">
-              <p class="font-mono font-medium text-gold text-lg">20 m/s</p>
-              <p class="text-sm text-ink-muted mt-0.5">Capable of avoiding obstacles at high relative velocities</p>
-            </div>
-            <div class="bg-surface2 p-4 rounded-card">
-              <p class="font-mono font-medium text-gold text-lg">1m Accuracy</p>
-              <p class="text-sm text-ink-muted mt-0.5">Precise object localization in 3D space</p>
-            </div>
-            <div class="bg-surface2 p-4 rounded-card">
-              <p class="font-mono font-medium text-gold text-lg">100ms Latency</p>
-              <p class="text-sm text-ink-muted mt-0.5">Real-time processing and response</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Technical Implementation -->
-        <div class="bg-surface rounded-card border border-half p-6 space-y-8">
-          <h2 class="font-serif text-2xl text-ink-primary">Technical Implementation</h2>
-
-          <div>
-            <h3 class="font-medium text-ink-primary mb-2">Detection System</h3>
-            <p class="text-sm text-ink-muted mb-3">Implemented a LIDAR-based detection system with:</p>
-            <ul class="space-y-2 text-sm text-ink-muted list-disc list-inside">
-              <li>40m detection range for 1m³ objects</li>
-              <li>360° horizontal field of view</li>
-              <li>Custom point cloud clustering algorithms</li>
-              <li>Vibration-resistant mounting system</li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 class="font-medium text-ink-primary mb-2">Avoidance Algorithm</h3>
-            <p class="text-sm text-ink-muted mb-3">Developed a sophisticated avoidance system featuring:</p>
-            <ul class="space-y-2 text-sm text-ink-muted list-disc list-inside">
-              <li>Dynamic path planning with real-time trajectory updates</li>
-              <li>Three-dimensional velocity obstacle method</li>
-              <li>Optimization for minimal deviation from planned path</li>
-              <li>Fail-safe mechanisms and manual override capability</li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 class="font-medium text-ink-primary mb-2">System Integration</h3>
-            <p class="text-sm text-ink-muted mb-3">Seamless integration with drone systems through:</p>
-            <ul class="space-y-2 text-sm text-ink-muted list-disc list-inside">
-              <li>Custom sensor data pipeline</li>
-              <li>Real-time processing on Nvidia Jetson</li>
-              <li>PX4 flight controller integration</li>
-              <li>Comprehensive testing framework</li>
-            </ul>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Right sidebar -->
-      <div class="space-y-6">
-
-        <!-- Technologies -->
-        <div class="bg-surface rounded-card border border-half p-6">
-          <h3 class="font-medium text-ink-primary mb-4">Technologies Used</h3>
-          <div class="flex flex-wrap gap-2">
-            {['LIDAR','Python','C++','ROS','PX4','Gazebo','MATLAB'].map(t => (
-              <TechBadge label={t} />
-            ))}
-          </div>
-        </div>
-
-        <!-- Key Achievements -->
-        <div class="bg-surface rounded-card border border-half p-6">
-          <h3 class="font-medium text-ink-primary mb-4">Key Achievements</h3>
-          <ul class="space-y-2 text-sm text-ink-muted">
-            <li>• Developed comprehensive simulation environment</li>
-            <li>• Achieved sub-100ms system latency</li>
-            <li>• Created detailed documentation for future teams</li>
-          </ul>
-        </div>
-
-        <!-- Project Timeline -->
-        <div class="bg-surface rounded-card border border-half p-6">
-          <h3 class="font-medium text-ink-primary mb-4">Project Timeline</h3>
-          <div class="space-y-4">
-            <div class="flex items-start gap-4">
-              <span class="font-mono text-xs text-ink-muted w-20 shrink-0 pt-0.5">Oct 2024</span>
-              <span class="text-sm text-ink-primary">Sensor Selection &amp; Testing</span>
-            </div>
-            <div class="flex items-start gap-4">
-              <span class="font-mono text-xs text-ink-muted w-20 shrink-0 pt-0.5">Nov 2024</span>
-              <span class="text-sm text-ink-primary">Algorithm Development</span>
-            </div>
-            <div class="flex items-start gap-4">
-              <span class="font-mono text-xs text-ink-muted w-20 shrink-0 pt-0.5">Jan 2025</span>
-              <span class="text-sm text-ink-primary">System Integration</span>
-            </div>
-            <div class="flex items-start gap-4">
-              <span class="font-mono text-xs text-ink-muted w-20 shrink-0 pt-0.5">Apr 2025</span>
-              <span class="text-sm text-ink-primary">Final Testing &amp; Documentation</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
+  <!-- ── Stats ──────────────────────────────────────────────────────────────── -->
+  <div class="max-w-site mx-auto px-6 pb-16">
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+      <StatCard label="[PLACEHOLDER: stat 1 label]" value="[value]" highlight />
+      <StatCard label="[PLACEHOLDER: stat 2 label]" value="[value]" />
+      <StatCard label="[PLACEHOLDER: stat 3 label]" value="[value]" />
+      <StatCard label="[PLACEHOLDER: stat 4 label]" value="[value]" />
     </div>
+  </div>
+
+  <main class="max-w-site mx-auto px-6 pb-20 space-y-16">
+
+    <!-- ── Overview placeholder ──────────────────────────────────────────────── -->
+    <section>
+      <SectionLabel label="Overview" />
+      <h2 class="font-serif text-2xl md:text-3xl text-ink-primary mb-4">
+        [PLACEHOLDER: overview heading]
+      </h2>
+      <p class="text-ink-muted max-w-2xl leading-relaxed">
+        [PLACEHOLDER: project overview — problem statement, system scope, team, sponsor or advisor.]
+      </p>
+    </section>
+
+    <!-- ── Technical Work placeholder ────────────────────────────────────────── -->
+    <section>
+      <SectionLabel label="Technical Implementation" />
+      <h2 class="font-serif text-2xl md:text-3xl text-ink-primary mb-4">
+        [PLACEHOLDER: technical heading]
+      </h2>
+      <p class="text-ink-muted max-w-2xl leading-relaxed">
+        [PLACEHOLDER: technical content — detection system, avoidance algorithm, system integration,
+        testing results.]
+      </p>
+    </section>
+
+    <!-- ── Results placeholder ───────────────────────────────────────────────── -->
+    <section>
+      <SectionLabel label="Results" />
+      <h2 class="font-serif text-2xl md:text-3xl text-ink-primary mb-4">
+        [PLACEHOLDER: results heading]
+      </h2>
+      <p class="text-ink-muted max-w-2xl leading-relaxed">
+        [PLACEHOLDER: results — achieved latency, accuracy, what was demonstrated, demo video or footage.]
+      </p>
+    </section>
+
   </main>
 
 </Layout>

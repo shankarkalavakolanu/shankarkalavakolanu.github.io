@@ -8,7 +8,8 @@ export default {
         bg:       'var(--color-bg)',
         surface:  'var(--color-surface)',
         surface2: 'var(--color-surface2)',
-        border:   'var(--color-border)',
+        border:        'var(--color-border)',
+        'border-soft': 'var(--color-border-soft)',
         ink: {
           primary: 'var(--color-ink-primary)',
           muted:   'var(--color-ink-muted)',

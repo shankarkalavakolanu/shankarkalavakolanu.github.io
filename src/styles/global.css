@@ -15,6 +15,7 @@
   --color-surface:     #FFFFFF;
   --color-surface2:    #EDE8DE;
   --color-border:      #D0C9BA;
+  --color-border-soft: color-mix(in srgb, #D0C9BA 40%, transparent);
   --color-ink-primary: #1A1815;
   --color-ink-muted:   #6B6357;
   --color-gold:        #D4A24C;
@@ -26,6 +27,7 @@
   --color-surface:     #17140F;
   --color-surface2:    #211C14;
   --color-border:      #2E2820;
+  --color-border-soft: color-mix(in srgb, #2E2820 40%, transparent);
   --color-ink-primary: #F3ECDD;
   --color-ink-muted:   #A49A86;
   --color-gold:        #D4A24C;

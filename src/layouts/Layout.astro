@@ -27,5 +27,55 @@ const { title, accentColor = '#D4A24C' } = Astro.props;
   <Nav />
   <slot />
   <Footer />
+
+  <!-- Tabs init: any element with [data-tabs-container] gets wired up. -->
+  <script is:inline>
+    (function () {
+      function initTabs(container) {
+        const tabs = Array.from(container.querySelectorAll('[role="tab"]'));
+        const panels = Array.from(container.querySelectorAll('[role="tabpanel"]'));
+        if (!tabs.length || !panels.length) return;
+
+        function activate(id, focus) {
+          tabs.forEach((t) => {
+            const active = t.dataset.target === id;
+            t.setAttribute('aria-selected', active ? 'true' : 'false');
+            t.setAttribute('tabindex', active ? '0' : '-1');
+            t.classList.toggle('text-ink-primary', active);
+            t.classList.toggle('border-gold', active);
+            t.classList.toggle('text-ink-muted', !active);
+            t.classList.toggle('border-transparent', !active);
+          });
+          panels.forEach((p) => {
+            p.classList.toggle('hidden', p.dataset.tabId !== id);
+          });
+          if (focus) {
+            const activeTab = tabs.find((t) => t.dataset.target === id);
+            if (activeTab) activeTab.focus();
+          }
+        }
+
+        tabs.forEach((tab, i) => {
+          tab.addEventListener('click', () => activate(tab.dataset.target));
+          tab.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+              e.preventDefault();
+              const dir = e.key === 'ArrowRight' ? 1 : -1;
+              const next = (i + dir + tabs.length) % tabs.length;
+              activate(tabs[next].dataset.target, true);
+            } else if (e.key === 'Home') {
+              e.preventDefault();
+              activate(tabs[0].dataset.target, true);
+            } else if (e.key === 'End') {
+              e.preventDefault();
+              activate(tabs[tabs.length - 1].dataset.target, true);
+            }
+          });
+        });
+      }
+
+      document.querySelectorAll('[data-tabs-container]').forEach(initTabs);
+    })();
+  </script>
 </body>
 </html>

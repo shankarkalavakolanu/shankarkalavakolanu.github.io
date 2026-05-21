@@ -40,8 +40,12 @@ const accent = ACCENTS.dreamingFalcon;
 
   <!-- ── Hero Image ─────────────────────────────────────────────────────────── -->
   <div class="max-w-site mx-auto px-6 pb-10">
-    <HeroImage color={accent}>
-      <span class="font-mono text-xs text-ink-muted">[placeholder: DREAMING Falcon figure or simulation render]</span>
+    <HeroImage color={accent} aspectRatio="auto">
+      <img
+        src="/Images/dreaming_falcon_presentation.jpeg"
+        alt="Bhavanishankar Kalavakolanu and Eashan Vytla presenting Dreaming Falcon at AIAA DCASS 2025"
+        class="w-full h-auto object-contain"
+      />
     </HeroImage>
   </div>
 
@@ -50,7 +54,7 @@ const accent = ACCENTS.dreamingFalcon;
     <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
       <StatCard label="Venue"  value="AIAA DCASS 2025"  highlight />
       <StatCard label="arXiv"  value="2511.18243" />
-      <StatCard label="Role"   value="Co-author" />
+      <StatCard label="Role"   value="2nd author" />
       <StatCard label="Focus"  value="6-DOF quadrotor" />
     </div>
   </div>
@@ -62,12 +66,14 @@ const accent = ACCENTS.dreamingFalcon;
       <SectionLabel label="Summary" />
 
       <h2 class="font-serif text-2xl md:text-3xl text-ink-primary mb-4">
-        [PLACEHOLDER: lay summary heading]
+        What it is
       </h2>
       <p class="text-ink-muted max-w-2xl leading-relaxed">
-        [PLACEHOLDER: one or two paragraphs explaining what the paper does in plain language —
-        what problem it solves, what the DREAMING algorithm is, and what the quadrotor result
-        demonstrates.]
+        An investigation into whether physics-informed structure can help model-based
+        reinforcement learning generalize to quadrotor flight dynamics. The work combines a
+        Dreamer-style world model with known 6-DOF rigid-body physics, then evaluates whether
+        this inductive bias is enough to enable robust policy training for adaptive flight
+        control.
       </p>
     </section>
 
@@ -76,11 +82,15 @@ const accent = ACCENTS.dreamingFalcon;
       <SectionLabel label="Technical Approach" />
 
       <h2 class="font-serif text-2xl md:text-3xl text-ink-primary mb-4">
-        [PLACEHOLDER: technical section heading]
+        How it works
       </h2>
       <p class="text-ink-muted max-w-2xl leading-relaxed">
-        [PLACEHOLDER: technical summary — model architecture, physics-informed priors,
-        training setup, simulation environment, key results and metrics.]
+        The world model predicts net forces and moments acting on the quadrotor as a free body,
+        then integrates them through 6-DOF equations of motion and a Runge-Kutta (RK4)
+        integrator. Both this physics-informed model and an RNN baseline achieved low error on
+        in-distribution rollouts but diverged on out-of-distribution trajectories — pointing to
+        data coverage of transition dynamics as a key bottleneck, not model architecture. Full
+        details in the paper.
       </p>
     </section>
 
@@ -93,7 +103,9 @@ const accent = ACCENTS.dreamingFalcon;
           DREAMING Falcon: Physics-Informed Model-Based Reinforcement Learning
           for Adaptive Quadrotor Control
         </h3>
-        <p class="text-sm text-ink-muted mb-1">[PLACEHOLDER: author list]</p>
+        <p class="text-sm text-ink-muted mb-1">
+          Eashan Vytla, Bhavanishankar Kalavakolanu, Andrew Perrault, Matthew McCrink — The Ohio State University
+        </p>
         <p class="font-mono text-xs text-ink-muted uppercase tracking-[0.08em] mb-4">
           AIAA Dayton-Cincinnati Aerospace Sciences Symposium (DCASS) 2025
         </p>
@@ -108,22 +120,6 @@ const accent = ACCENTS.dreamingFalcon;
             <path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
           </svg>
         </a>
-      </div>
-    </section>
-
-    <!-- ── Figures gallery placeholder ───────────────────────────────────────── -->
-    <section>
-      <SectionLabel label="Figures" />
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {Array.from({ length: 4 }).map(() => (
-          <div
-            class="rounded-card bg-surface2 flex items-center justify-center"
-            style="aspect-ratio: 4/3;"
-          >
-            <span class="font-mono text-xs text-ink-muted">[placeholder: paper figure]</span>
-          </div>
-        ))}
       </div>
     </section>
 

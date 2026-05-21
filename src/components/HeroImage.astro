@@ -1,18 +1,21 @@
 ---
 interface Props {
-  color: string; // pass 'transparent' to suppress glow (Capstone)
+  color: string;            // pass 'transparent' to suppress glow (Capstone)
+  aspectRatio?: string;     // default '21/9'; pass 'auto' to let content drive the box
 }
-const { color } = Astro.props;
+const { color, aspectRatio = '21/9' } = Astro.props;
 
 const glow =
   color === 'transparent'
     ? 'none'
     : `0 0 0 1px color-mix(in srgb, ${color} 25%, transparent),
        0 0 48px 8px color-mix(in srgb, ${color} 12%, transparent)`;
+
+const ratioStyle = aspectRatio === 'auto' ? '' : `aspect-ratio: ${aspectRatio};`;
 ---
 <div
   class="w-full rounded-card overflow-hidden bg-surface2 flex items-center justify-center"
-  style={`aspect-ratio: 21/9; box-shadow: ${glow};`}
+  style={`${ratioStyle} box-shadow: ${glow};`}
 >
   <slot>
     <span class="font-mono text-xs text-ink-muted">[placeholder: hero image/video]</span>

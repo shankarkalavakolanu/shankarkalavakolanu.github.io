@@ -5,9 +5,123 @@ import Breadcrumb from '../components/Breadcrumb.astro';
 import HeroImage from '../components/HeroImage.astro';
 import StatCard from '../components/StatCard.astro';
 import SectionLabel from '../components/SectionLabel.astro';
+import TechBadge from '../components/TechBadge.astro';
 import { ACCENTS } from '../lib/accents';
 
 const accent = ACCENTS.quantumLeap;
+
+const seasons = [
+  {
+    year: '2020-2021',
+    heading: 'Ultimate Goal — the world record season',
+    blurb:
+      'Set the world record for autonomous scoring and qualified for the World Championship. Ranked #1 in Ohio. This was also the season the four-wheel odometry system came online, a first for FTC.',
+    youtube: {
+      src: 'https://www.youtube.com/embed/MfgYiEp86J8',
+      title: 'World Record Performance',
+    },
+    achievements: [
+      '#1 ranked in Ohio',
+      'World record autonomous scoring',
+      'World Championship qualification',
+    ],
+    innovationsLabel: 'Technical Innovations',
+    innovations: [
+      'First four-wheel odometry system in FTC',
+      'Sub-0.1 second 3-ring release',
+      'Multi-threaded Java control architecture',
+    ],
+    images: [],
+  },
+  {
+    year: '2019-2020',
+    heading: 'Skystone',
+    blurb:
+      "Won the State Inspire Award and qualified for the World Championship. Inspire is FTC's top judging award — given to one team per event for a combination of robot performance, engineering documentation, and outreach.",
+    youtube: null,
+    achievements: [
+      'State Inspire Award Winners',
+      'World Championship Qualification',
+      'Stone re-alignment system',
+    ],
+    innovationsLabel: 'Technical Innovations',
+    innovations: [
+      'Custom Vision Processing Pipeline',
+      'Path planning algorithms',
+      'Real-time Position Tracking',
+    ],
+    images: [
+      { src: '/Images/skystone_robot.jpg',       alt: 'Skystone robot' },
+      { src: '/Images/Full_Team_Inspire_Pic.jpg', alt: 'Team Inspire picture' },
+      { src: '/Images/Aura.jpg',                  alt: 'Aura robot' },
+      { src: '/Images/skystone_cad.jpg',          alt: 'Skystone CAD model' },
+    ],
+  },
+  {
+    year: '2018-2019',
+    heading: 'Rover Ruckus',
+    blurb:
+      'Ranked #1 in the state going into the State Championship, with a vision-based mineral detection system. Qualified for the World Championship that season.',
+    youtube: {
+      src: 'https://www.youtube.com/embed/J3seoxEbnI8',
+      title: 'Rover Ruckus robot reveal',
+    },
+    achievements: [
+      '#1 ranked in Ohio',
+      'World Championship qualification',
+      'Vision-based mineral detection and filtering',
+    ],
+    innovationsLabel: 'Technical Innovations',
+    innovations: [
+      'OpenCV computer vision pipeline for game element detection',
+      'Automated end-game scoring sequence',
+    ],
+    images: [
+      { src: '/Images/Rover_Robot.jpg',     alt: 'Rover Ruckus robot' },
+      { src: '/Images/Rover_Award+bot.jpg', alt: 'Rover Ruckus award and robot' },
+    ],
+  },
+  {
+    year: '2014-2018',
+    heading: 'Cascade Effect → Relic Recovery — the founding years',
+    blurb:
+      'Four seasons of team-building: Cascade Effect, Res-Q, Velocity Vortex, Relic Recovery. Started the program from scratch, hit the first State Championship qualification in 2017, and the first World Championship qualification that same year.',
+    youtube: null,
+    achievements: [
+      'Team founded 2014',
+      'First State Championship qualification: 2017',
+      'First World Championship qualification: 2017',
+    ],
+    innovationsLabel: 'Technical Milestones',
+    innovations: [
+      'First fully autonomous program',
+      'First custom control system',
+    ],
+    images: [],
+  },
+];
+
+const awards = [
+  "Dean's List Semi-Finalist",
+  '10X Inspire Award Winners',
+  '12X Tournament Winners',
+  '10X Winning Alliance Captains',
+  'Software Innovation Award — Maryland Tech Invitational',
+  'Multiple Think Award Winners',
+  'Control Award Winners',
+  'State Championship Winners',
+];
+
+const technologies = [
+  'SOLIDWORKS', 'Java', 'Android Studio', 'OpenCV', 'CAD', 'Git',
+  'Sensor Fusion', '3D Printing', 'Laser Cutting', 'CNC', 'Water Jet',
+];
+
+const gallery = [
+  { src: '/Images/V2_lindexer.jpg',               alt: 'V2 ring indexer' },
+  { src: '/Images/Just_students_inspire_pic.jpg', alt: 'Team with Inspire Award' },
+  { src: '/Images/QL_Trophies_Pic.jpg',           alt: 'Quantum Leap trophies' },
+];
 ---
 <Layout title="Quantum Leap Robotics — Shankar Kalavakolanu" accentColor={accent}>
 
@@ -18,79 +132,163 @@ const accent = ACCENTS.quantumLeap;
     <Breadcrumb color={accent} label="Quantum Leap Robotics" />
 
     <h1 class="font-serif text-4xl md:text-5xl text-ink-primary leading-[1.15] mb-4">
-      [PLACEHOLDER: QL headline line 1]<br />
-      [PLACEHOLDER: line 2, last word in <span class="text-gold">gold]</span>
+      Seven years of <span class="text-gold">Quantum Leap Robotics.</span><br />
+      2014 – 2021.
     </h1>
     <p class="text-base md:text-lg text-ink-muted max-w-[500px] leading-relaxed">
-      [PLACEHOLDER: QL sub-line — team span, role, key achievement]
+      From Cascade Effect to Ultimate Goal. Seven seasons, one team, the
+      foundation for everything since.
     </p>
   </header>
 
   <!-- ── Hero Image ─────────────────────────────────────────────────────────── -->
   <div class="max-w-site mx-auto px-6 pb-10">
-    <HeroImage color={accent}>
-      <span class="font-mono text-xs text-ink-muted">[placeholder: QL robot or competition photo]</span>
+    <HeroImage color={accent} aspectRatio="auto">
+      <img
+        src="/Images/Robot+Trophies.jpg"
+        alt="Quantum Leap robot with trophies"
+        class="w-full h-auto object-contain"
+      />
     </HeroImage>
   </div>
 
   <!-- ── Stats ──────────────────────────────────────────────────────────────── -->
   <div class="max-w-site mx-auto px-6 pb-16">
     <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
-      <StatCard label="FTC state finals"         value="5x"            highlight />
-      <StatCard label="World Championships"       value="4x" />
-      <StatCard label="Dean's List"               value="Semi-finalist" />
-      <StatCard label="Software Innovation Award" value="JHAPL" />
+      <StatCard label="Seasons"                    value="7"   highlight />
+      <StatCard label="World Champ. Qualifications" value="4x" />
+      <StatCard label="Inspire Awards"             value="10x" />
+      <StatCard label="Tournament Wins"            value="8x" />
     </div>
   </div>
 
-  <main class="max-w-site mx-auto px-6 pb-20 space-y-16">
+  <main class="max-w-site mx-auto px-6 pb-20 space-y-12">
 
-    <!-- ── Overview placeholder ──────────────────────────────────────────────── -->
-    <section>
-      <SectionLabel label="Overview" />
-      <h2 class="font-serif text-2xl md:text-3xl text-ink-primary mb-4">
-        [PLACEHOLDER: overview heading]
-      </h2>
-      <p class="text-ink-muted max-w-2xl leading-relaxed">
-        [PLACEHOLDER: journey overview — 7 years with FTC Team 8719, key seasons,
-        founding story, growth of the team.]
-      </p>
-    </section>
-
-    <!-- ── Technical Work placeholder ────────────────────────────────────────── -->
-    <section>
-      <SectionLabel label="Technical Innovations" />
-      <h2 class="font-serif text-2xl md:text-3xl text-ink-primary mb-4">
-        [PLACEHOLDER: technical heading]
-      </h2>
-      <p class="text-ink-muted max-w-2xl leading-relaxed">
-        [PLACEHOLDER: four-wheel odometry system, control architecture, mechanical design,
-        season-by-season technical progression.]
-      </p>
-    </section>
-
-    <!-- ── Season highlights placeholder ─────────────────────────────────────── -->
-    <section>
+    <!-- ── Season Highlights (tabbed) ───────────────────────────────────────── -->
+    <section data-tabs-container>
       <SectionLabel label="Season Highlights" />
-      <h2 class="font-serif text-2xl md:text-3xl text-ink-primary mb-4">
-        [PLACEHOLDER: season highlights heading]
-      </h2>
-      <p class="text-ink-muted max-w-2xl leading-relaxed">
-        [PLACEHOLDER: season-by-season highlights — 2020-21 world record, 2019-20 Inspire Award,
-        2018-19 State Championship, 2014-18 foundation years.]
-      </p>
+
+      <div
+        role="tablist"
+        aria-label="Quantum Leap seasons"
+        class="flex flex-wrap gap-1 border-b border-border-soft mb-8"
+      >
+        {seasons.map((s, i) => (
+          <button
+            role="tab"
+            type="button"
+            data-target={String(i)}
+            id={`ql-tab-${i}`}
+            aria-controls={`ql-panel-${i}`}
+            aria-selected={i === 0 ? 'true' : 'false'}
+            tabindex={i === 0 ? 0 : -1}
+            class={`font-mono text-xs uppercase tracking-[0.08em] px-4 py-3 border-b-2 transition-colors -mb-px whitespace-nowrap focus:outline-none focus-visible:text-ink-primary ${
+              i === 0
+                ? 'text-ink-primary border-gold'
+                : 'text-ink-muted border-transparent hover:text-ink-primary'
+            }`}
+          >
+            {s.year}
+          </button>
+        ))}
+      </div>
+
+      <div class="min-h-[600px]">
+        {seasons.map((s, i) => (
+          <article
+            role="tabpanel"
+            data-tab-id={String(i)}
+            id={`ql-panel-${i}`}
+            aria-labelledby={`ql-tab-${i}`}
+            class={i === 0 ? '' : 'hidden'}
+          >
+            <h4 class="font-serif text-xl md:text-2xl text-ink-primary mb-4">{s.heading}</h4>
+            <p class="text-ink-muted leading-relaxed max-w-2xl mb-6">{s.blurb}</p>
+
+            {s.youtube && (
+              <div class="rounded-card overflow-hidden border border-half mb-6" style="aspect-ratio: 16/9;">
+                <iframe
+                  class="w-full h-full"
+                  src={s.youtube.src}
+                  title={s.youtube.title}
+                  loading="lazy"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                />
+              </div>
+            )}
+
+            {s.images.length > 0 && (
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
+                {s.images.map((img) => (
+                  <div class="rounded-card overflow-hidden border border-half bg-surface2" style="aspect-ratio: 4/3;">
+                    <img src={img.src} alt={img.alt} loading="lazy" class="w-full h-full object-cover" />
+                  </div>
+                ))}
+              </div>
+            )}
+
+            <div class="grid gap-6 md:grid-cols-2">
+              <div>
+                <p class="font-mono text-xs uppercase tracking-[0.08em] text-ink-primary mb-3">Key Achievements</p>
+                <ul class="space-y-2 text-sm text-ink-muted leading-relaxed">
+                  {s.achievements.map((a) => (
+                    <li class="flex gap-2">
+                      <span class="text-gold leading-none mt-1.5">·</span>
+                      <span>{a}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div>
+                <p class="font-mono text-xs uppercase tracking-[0.08em] text-ink-primary mb-3">{s.innovationsLabel}</p>
+                <ul class="space-y-2 text-sm text-ink-muted leading-relaxed">
+                  {s.innovations.map((i) => (
+                    <li class="flex gap-2">
+                      <span class="text-gold leading-none mt-1.5">·</span>
+                      <span>{i}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
     </section>
 
-    <!-- ── Gallery placeholder ───────────────────────────────────────────────── -->
+    <!-- ── Awards & Recognition ─────────────────────────────────────────────── -->
+    <section>
+      <SectionLabel label="Awards & Recognition" />
+
+      <div class="bg-surface rounded-card border border-half p-6 md:p-8 max-w-2xl">
+        <ul class="divide-y divide-border-soft">
+          {awards.map((a) => (
+            <li class="py-3 text-sm text-ink-muted first:pt-0 last:pb-0">{a}</li>
+          ))}
+        </ul>
+      </div>
+    </section>
+
+    <!-- ── Technologies Used ────────────────────────────────────────────────── -->
+    <section>
+      <SectionLabel label="Technologies Used" />
+
+      <div class="flex flex-wrap gap-2 max-w-2xl">
+        {technologies.map((t) => <TechBadge label={t} />)}
+      </div>
+    </section>
+
+    <!-- ── Gallery ──────────────────────────────────────────────────────────── -->
     <section>
       <SectionLabel label="Gallery" />
+
       <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
-        {Array.from({ length: 6 }).map(() => (
-          <div
-            class="rounded-card bg-surface2 flex items-center justify-center"
-            style="aspect-ratio: 4/3;"
-          >
-            <span class="font-mono text-xs text-ink-muted">[gallery image]</span>
+        {gallery.map((g) => (
+          <div class="rounded-card overflow-hidden border border-half bg-surface2" style="aspect-ratio: 4/3;">
+            <img src={g.src} alt={g.alt} loading="lazy" class="w-full h-full object-cover" />
           </div>
         ))}
       </div>

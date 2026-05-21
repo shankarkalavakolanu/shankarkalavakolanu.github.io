@@ -56,7 +56,6 @@ Company colors:
 - Buckeye Vertical: #BB0000 (OSU scarlet)
 - Quantum Leap: #6B4F9E (confirm against actual logo)
 - DREAMING Falcon / ARC: #BB0000 (ARC is OSU)
-- Capstone: gold only
 
 ## Micro-interactions (Phase 1 only)
 - Hover lifts on cards (2-4px, 150ms ease-out)
@@ -71,6 +70,23 @@ Content stays identical (all existing text preserved verbatim). Look changes
 to the new palette, typography, layout conventions, and per-page company
 accents. No new sections, no content updates, no 3D, no contact form yet.
 
+## Space-Intel disclosure (UPDATED)
+Space-Intel is now publicly disclosed on the site at the following level of
+detail:
+- Company: Space-Intel
+- Title (PUBLIC SITE ONLY): Founding Robotics and Autonomy Engineer
+  (note: internal title is Lead Robotics & Autonomy Engineer; the site
+  intentionally uses "Founding" for public positioning)
+- Dates: Nov 2025 – Present
+- Location: Dallas, TX
+- Description of work: "Developing autonomous systems for final mile
+  delivery, geospatial mapping, and stratospheric imaging applications"
+
+Do NOT add specifics beyond what's listed above without my approval — no
+customer names, no investor amounts, no hardware vendors, no technical
+architecture details, no team size. Resume bullets that list Jetson Orin
+AGX, Starlink Mini, $50M investment, etc. should NOT appear on the site.
+
 ## Buckeye Vertical — factual ground truth (for future phases)
 Competition timeline:
 - 2021-22 (freshman year): VFS DBVF — 1st place
@@ -84,9 +100,10 @@ SUAS is the longer technical story.
 ## What NOT to do
 - Do NOT invent dates, awards, metrics, or accomplishments. If something is
   unclear, ask before writing it.
-- Do NOT add Space-Intel, Stealth Startup, updated GE bullets, VFS/SUAS
-  corrections, Stanford cert, or Part 107 in Phase 1. Content updates are a
-  later phase.
+- Do NOT add Stealth Startup, updated GE bullets, VFS/SUAS corrections,
+  Stanford cert, or Part 107 in Phase 1. Content updates are a later phase.
+  (Space-Intel disclosure is now allowed — see the Space-Intel disclosure
+  section above for the exact bounds.)
 - Do NOT break GitHub Pages deployment. The custom domain
   (shankarkalavakolanu.com) must keep working.
 - Do NOT commit node_modules, build output, or any binary files I haven't

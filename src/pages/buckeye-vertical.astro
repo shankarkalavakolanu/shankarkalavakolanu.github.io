@@ -9,6 +9,121 @@ import TechBadge from '../components/TechBadge.astro';
 import { ACCENTS } from '../lib/accents';
 
 const accent = ACCENTS.buckeyeVertical;
+
+const technicalHighlights = [
+  {
+    title: 'Autonomous package delivery mission',
+    body: '4 packages delivered autonomously across a 12-mile course (3 miles per lap) in under 30 minutes. Mission-spec waypoint navigation, autonomous targeting, and timed payload release — competition framing for a real delivery system.',
+  },
+  {
+    title: '20 m/s cruise speed',
+    body: 'Sustained 20 m/s cruise during competition flight, with additional headroom for higher speeds in testing.',
+  },
+  {
+    title: 'Real-time computer vision targeting',
+    body: 'YOLOv8 object detection running on NVIDIA Jetson Orin AGX, trained on Unity-generated synthetic datasets. Identifies and confirms drop zones autonomously, mid-flight.',
+  },
+  {
+    title: 'Sub-5 ft payload delivery accuracy',
+    body: 'Altitude-triggered, sensor-free release mechanism with soft-landing impact protection. Up to 3 lb package payloads, delivered with sub-5 ft accuracy on a 15 lb total-weight airframe.',
+  },
+];
+
+const techStackGroups = [
+  {
+    label: 'Flight / Autonomy',
+    items: ['PX4', 'MAVROS', 'Pixhawk', 'ROS2', 'NVIDIA Jetson Orin', 'Gazebo'],
+  },
+  {
+    label: 'ML / Vision',
+    items: ['YOLOv8', 'OpenCV', 'Unity (dataset gen)', 'Roboflow', 'TensorRT'],
+  },
+  {
+    label: 'Mechanical / Manufacturing',
+    items: ['SOLIDWORKS', 'ANSYS', 'GD&T (ASME Y14.5)', 'Carbon fiber / Kevlar composites', 'CNC'],
+  },
+];
+
+const years = [
+  {
+    year: '2024-2025 (SUAS)',
+    featured: true,
+    heading: 'Where it all came together',
+    blurb:
+      'Four years of iteration culminated in a vehicle that flies the full SUAS mission end-to-end: autonomous takeoff, waypoint navigation, mid-flight target identification, payload release, and return — across a 12-mile course in under 30 minutes, with all four packages delivered to sub-5 ft accuracy.',
+    images: [
+      { src: '/Images/2025_BV_Team_Pic.jpeg',    alt: 'Buckeye Vertical 2024-2025 team' },
+      { src: '/Images/12_11_2024_Drone_Cad.png', alt: 'Buckeye Vertical 2024-2025 drone CAD render' },
+    ],
+  },
+  {
+    year: '2023-2024 (SUAS)',
+    heading: 'The bounce-back',
+    blurb:
+      'First year the team made it to the SUAS international competition in Maryland, flew a full autonomous mission, and scored mission points — finishing 4th in Mission Demonstration. The big jump from the debut year, and the foundation for the cycles that followed.',
+    images: [
+      { src: '/Images/23-24_Drone_Pic.jpg', alt: '2023-24 Buckeye Vertical drone' },
+    ],
+    youtube: {
+      src: 'https://www.youtube.com/embed/1MYJbC0bmeI',
+      title: '2023-24 SUAS season highlights',
+    },
+    achievementsLabel: 'Key Achievements',
+    achievements: [
+      '4th in Mission Demonstration',
+      '95% accuracy in target recognition',
+      '15-foot payload delivery accuracy',
+      '70% reduction in vibrations',
+    ],
+    innovationsLabel: 'Technical Innovations',
+    innovations: [
+      'Custom motor mount design',
+    ],
+  },
+  {
+    year: '2022-2023 (SUAS)',
+    heading: 'The step up',
+    blurb:
+      "Transition year. Pivoted the team from VFS DBVF to the SUAS competition — a bigger mission with payload delivery, object detection, and autonomous flight planning all required end-to-end. Stood up new subteams to handle the scope, and put the structure in place for the program's expansion.",
+    images: [
+      { src: '/Images/2nd_year_hex.JPEG', alt: '2022-23 hexacopter' },
+    ],
+    youtube: null,
+    achievementsLabel: 'Achievements',
+    achievements: [
+      'Joined SUAS Competition',
+      'Altitude-Triggered Mechanical Parachute Deployment',
+    ],
+    innovationsLabel: 'Core Development',
+    innovations: [
+      'Carbon fiber frame design',
+      'Composite manufacturing techniques',
+    ],
+  },
+  {
+    year: '2021-2022 (VFS DBVF)',
+    heading: 'First place, first year',
+    blurb:
+      'Freshman year. 1st place at the VFS Design-Build-Vertical-Flight Competition with a hexacopter platform built end-to-end for autonomous package delivery. The result that started everything that followed.',
+    images: [
+      { src: '/Images/16_9_Me_Carrying_Drone_At_Comp.png', alt: 'Carrying the drone at the VFS competition' },
+      { src: '/Images/VFS_First_Place_Pic.jpg',            alt: 'Team with the VFS first-place award' },
+    ],
+    youtube: null,
+    achievementsLabel: 'Achievements',
+    achievements: [
+      'First Place VFS Competition',
+      'Autonomous waypoint navigation',
+      '2lb Payload Capacity',
+    ],
+    innovationsLabel: 'Core Development',
+    innovations: [
+      'Carbon fiber frame design',
+      'Initial autonomous system',
+      'Unique Landing Gear Design',
+    ],
+  },
+];
 ---
 <Layout title="Buckeye Vertical — Shankar Kalavakolanu" accentColor={accent}>
 
@@ -26,12 +141,28 @@ const accent = ACCENTS.buckeyeVertical;
       President &amp; Competition Team Lead, Aug 2021 – Jul 2025.
       Scaled the team from 15 to 75 members across four competition cycles.
     </p>
+
+    <a
+      href="https://buckeyevertical.org"
+      target="_blank" rel="noopener noreferrer"
+      class="inline-flex items-center gap-2 mt-5 px-3 py-1.5 rounded-button bg-surface border border-half text-sm font-mono text-ink-primary hover:text-[#BB0000] hover:border-[#BB0000] hover:-translate-y-[3px] transition duration-150"
+    >
+      Team site
+      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
+        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+      </svg>
+    </a>
   </header>
 
   <!-- ── Hero Image ─────────────────────────────────────────────────────────── -->
   <div class="max-w-site mx-auto px-6 pb-10">
-    <HeroImage color={accent}>
-      <span class="font-mono text-xs text-ink-muted">[placeholder: BV 2025 drone photo]</span>
+    <HeroImage color={accent} aspectRatio="auto">
+      <img
+        src="/Images/2025_Drone_in_Air.jpg"
+        alt="Buckeye Vertical 2024-25 drone in flight"
+        class="w-full h-auto object-contain"
+      />
     </HeroImage>
   </div>
 
@@ -45,7 +176,7 @@ const accent = ACCENTS.buckeyeVertical;
     </div>
   </div>
 
-  <main class="max-w-site mx-auto px-6 pb-20 space-y-16">
+  <main class="max-w-site mx-auto px-6 pb-20 space-y-12">
 
     <!-- ── Interactive CAD ───────────────────────────────────────────────────── -->
     <section>
@@ -84,7 +215,37 @@ const accent = ACCENTS.buckeyeVertical;
       </div>
     </section>
 
-    <!-- ── Lecture Series & PDP ───────────────────────────────────────────────── -->
+    <!-- ── Technical Highlights ─────────────────────────────────────────────── -->
+    <section>
+      <SectionLabel label="Technical Highlights" />
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {technicalHighlights.map((h) => (
+          <article class="bg-surface rounded-card border border-half p-6">
+            <h3 class="font-serif text-xl md:text-2xl text-ink-primary mb-3">{h.title}</h3>
+            <p class="text-sm text-ink-muted leading-relaxed">{h.body}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <!-- ── Tech Stack ───────────────────────────────────────────────────────── -->
+    <section>
+      <SectionLabel label="Tech Stack" />
+
+      <div class="space-y-6">
+        {techStackGroups.map((g) => (
+          <div class="grid grid-cols-1 md:grid-cols-[200px_1fr] gap-3 md:items-start">
+            <p class="italic text-sm text-ink-muted md:pt-1">{g.label}</p>
+            <div class="flex flex-wrap gap-2">
+              {g.items.map((t) => <TechBadge label={t} />)}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- ── Lecture Series & PDP ──────────────────────────────────────────────── -->
     <section>
       <SectionLabel label="Programs" />
 
@@ -92,57 +253,139 @@ const accent = ACCENTS.buckeyeVertical;
         Lecture Series &amp; Professional Development Program
       </h2>
 
-      <div class="space-y-5 text-base text-ink-muted leading-relaxed max-w-2xl">
-        <p>
-          The Buckeye Vertical Lecture Series existed in some form during my freshman year,
-          then went dormant. I revived it — this time in-person — and built the Professional
-          Development Program around it to turn a one-off talk into a full industry-facing platform.
-        </p>
-        <p>
-          The Lecture Series brought senior engineers from SpaceX, GE Aerospace, Amazon, Boom
-          Supersonic, and Johns Hopkins APL to OSU for hour-long technical talks on the work they
-          were actually doing — packed rooms of students and faculty. Not recruiting pitches. A
-          stage for companies to share real engineering with the students genuinely curious enough
-          to show up.
-        </p>
-        <p>
-          The PDP closed the loop the other way: each lecture day paired the talk with a lab and
-          flight demo, a networking dinner, and a curated resume package of top-performing members
-          sent to each visiting company, plus direct introductions to OSU research faculty. Members
-          placed at SpaceX, GE Aerospace, Amazon, and beyond. The pipeline was a byproduct of the
-          substance, not the other way around.
-        </p>
-      </div>
+      <p class="text-base text-ink-muted leading-relaxed max-w-2xl">
+        The Buckeye Vertical Professional Development Program was built to give
+        companies direct access to engaged engineering talent at OSU, and give
+        members real exposure to industry work. To anchor it, I revived the
+        Buckeye Vertical Lecture Series in-person — bringing senior engineers
+        from SpaceX, GE Aerospace, Amazon, Boom Supersonic, and Johns Hopkins
+        APL to campus for technical talks on their active work. Each lecture
+        day was paired with a flight demo, networking dinner, and curated
+        resume packages of top members. Members went on to roles at SpaceX,
+        GE Aerospace, and Amazon.
+      </p>
     </section>
 
-    <!-- ── Gallery placeholder ───────────────────────────────────────────────── -->
-    <section>
-      <SectionLabel label="Gallery" />
+    <!-- ── Competition Years (tabbed) ────────────────────────────────────────── -->
+    <section data-tabs-container>
+      <SectionLabel label="Competition Years" />
 
-      <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
-        {Array.from({ length: 6 }).map((_, i) => (
-          <div
-            class="rounded-card bg-surface2 flex items-center justify-center"
-            style="aspect-ratio: 4/3;"
+      <div
+        role="tablist"
+        aria-label="Competition years"
+        class="flex flex-wrap gap-1 border-b border-border-soft mb-8"
+      >
+        {years.map((y, i) => (
+          <button
+            role="tab"
+            type="button"
+            data-target={String(i)}
+            id={`bv-tab-${i}`}
+            aria-controls={`bv-panel-${i}`}
+            aria-selected={i === 0 ? 'true' : 'false'}
+            tabindex={i === 0 ? 0 : -1}
+            class={`font-mono text-xs uppercase tracking-[0.08em] px-4 py-3 border-b-2 transition-colors -mb-px whitespace-nowrap focus:outline-none focus-visible:text-ink-primary ${
+              i === 0
+                ? 'text-ink-primary border-gold'
+                : 'text-ink-muted border-transparent hover:text-ink-primary'
+            }`}
           >
-            <span class="font-mono text-xs text-ink-muted">[gallery image]</span>
-          </div>
+            {y.year}
+          </button>
         ))}
       </div>
-    </section>
 
-    <!-- ── Technical Deep-Dive placeholder ───────────────────────────────────── -->
-    <section>
-      <SectionLabel label="Technical Work" />
+      <div class="min-h-[600px]">
+        {years.map((y, i) => (
+          <article
+            role="tabpanel"
+            data-tab-id={String(i)}
+            id={`bv-panel-${i}`}
+            aria-labelledby={`bv-tab-${i}`}
+            class={i === 0 ? '' : 'hidden'}
+          >
+            {y.featured ? (
+              <>
+                <h4 class="font-serif text-xl md:text-2xl text-ink-primary mb-4">{y.heading}</h4>
+                <p class="text-ink-muted leading-relaxed max-w-2xl mb-6">{y.blurb}</p>
 
-      <h2 class="font-serif text-2xl md:text-3xl text-ink-primary mb-4">
-        [PLACEHOLDER: technical deep-dive heading]
-      </h2>
-      <p class="text-ink-muted max-w-2xl leading-relaxed">
-        [PLACEHOLDER: technical deep-dive content — structural analysis, avionics architecture,
-        payload delivery system, flight testing methodology. This section will contain the detailed
-        engineering narrative.]
-      </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                  {y.images.map((img) => (
+                    <div class="rounded-card overflow-hidden border border-half bg-surface2" style="aspect-ratio: 4/3;">
+                      <img src={img.src} alt={img.alt} loading="lazy" class="w-full h-full object-cover" />
+                    </div>
+                  ))}
+                </div>
+              </>
+            ) : (
+              <>
+                <h4 class="font-serif text-xl md:text-2xl text-ink-primary mb-4">{y.heading}</h4>
+                <p class="text-ink-muted leading-relaxed max-w-2xl mb-6">{y.blurb}</p>
+                {(() => {
+                  const media = [
+                    ...(y.images || []).map((img) => ({ kind: 'image', src: img.src, alt: img.alt })),
+                    ...(y.youtube ? [{ kind: 'video', src: y.youtube.src, title: y.youtube.title }] : []),
+                  ];
+                  if (!media.length) return null;
+                  const aspect = media.some((m) => m.kind === 'video') ? '16/9' : '4/3';
+                  const wrapperClass = media.length === 1
+                    ? 'mb-6 w-full sm:w-1/2 mx-auto'
+                    : 'mb-6 grid grid-cols-1 sm:grid-cols-2 gap-3';
+                  return (
+                    <div class={wrapperClass}>
+                      {media.map((m) =>
+                        m.kind === 'image' ? (
+                          <div class="rounded-card overflow-hidden border border-half bg-surface2" style={`aspect-ratio: ${aspect};`}>
+                            <img src={m.src} alt={m.alt} loading="lazy" class="w-full h-full object-cover" />
+                          </div>
+                        ) : (
+                          <div class="rounded-card overflow-hidden border border-half" style={`aspect-ratio: ${aspect};`}>
+                            <iframe
+                              class="w-full h-full"
+                              src={m.src}
+                              title={m.title}
+                              loading="lazy"
+                              frameborder="0"
+                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                              allowfullscreen
+                            ></iframe>
+                          </div>
+                        )
+                      )}
+                    </div>
+                  );
+                })()}
+
+                <div class="grid gap-6 md:grid-cols-2">
+                  <div>
+                    <p class="font-mono text-xs uppercase tracking-[0.08em] text-ink-primary mb-3">{y.achievementsLabel}</p>
+                    <ul class="space-y-2 text-sm text-ink-muted leading-relaxed">
+                      {y.achievements.map((a) => (
+                        <li class="flex gap-2">
+                          <span class="text-gold leading-none mt-1.5">·</span>
+                          <span>{a}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div>
+                    <p class="font-mono text-xs uppercase tracking-[0.08em] text-ink-primary mb-3">{y.innovationsLabel}</p>
+                    <ul class="space-y-2 text-sm text-ink-muted leading-relaxed">
+                      {y.innovations.map((i) => (
+                        <li class="flex gap-2">
+                          <span class="text-gold leading-none mt-1.5">·</span>
+                          <span>{i}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </>
+            )}
+          </article>
+        ))}
+      </div>
     </section>
 
   </main>

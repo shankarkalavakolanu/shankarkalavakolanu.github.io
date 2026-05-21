@@ -6,7 +6,11 @@ interface Props {
 }
 const { value, label, highlight = false } = Astro.props;
 ---
-<div class="bg-surface2 p-5 rounded-card">
-  <p class="font-mono text-xs uppercase tracking-[0.08em] text-ink-muted mb-2">{label}</p>
-  <p class={`font-medium text-xl ${highlight ? 'text-gold' : 'text-ink-primary'}`}>{value}</p>
+<div class="bg-surface2 rounded-card p-6 flex flex-col h-full">
+  <p class="font-mono text-xs uppercase tracking-[0.08em] text-ink-muted leading-tight min-h-[2.5em]">
+    {label}
+  </p>
+  <p class={`font-medium text-2xl md:text-3xl mt-auto pt-4 ${highlight ? 'text-gold' : 'text-ink-primary'}`}>
+    {value}
+  </p>
 </div>

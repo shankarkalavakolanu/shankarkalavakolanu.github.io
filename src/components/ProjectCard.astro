@@ -6,8 +6,10 @@ interface Props {
   title: string;
   blurb: string;
   imagePlaceholder?: string;
+  image?: string;
+  imageAlt?: string;
 }
-const { href, accentColor, companyLabel, title, blurb, imagePlaceholder } = Astro.props;
+const { href, accentColor, companyLabel, title, blurb, imagePlaceholder, image, imageAlt } = Astro.props;
 ---
 <a
   href={href}
@@ -15,12 +17,20 @@ const { href, accentColor, companyLabel, title, blurb, imagePlaceholder } = Astr
 >
   <!-- Image area -->
   <div
-    class="bg-surface2 flex items-center justify-center"
+    class="bg-surface2 flex items-center justify-center overflow-hidden"
     style="aspect-ratio: 16/10;"
   >
-    <span class="font-mono text-xs text-ink-muted text-center px-4 leading-relaxed">
-      {imagePlaceholder ?? '[placeholder: project image]'}
-    </span>
+    {image ? (
+      <img
+        src={image}
+        alt={imageAlt ?? companyLabel}
+        class="w-full h-full object-cover"
+      />
+    ) : (
+      <span class="font-mono text-xs text-ink-muted text-center px-4 leading-relaxed">
+        {imagePlaceholder ?? '[placeholder: project image]'}
+      </span>
+    )}
   </div>
 
   <!-- Card content -->

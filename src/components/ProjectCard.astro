@@ -8,8 +8,10 @@ interface Props {
   imagePlaceholder?: string;
   image?: string;
   imageAlt?: string;
+  imageScale?: number;
 }
-const { href, accentColor, companyLabel, title, blurb, imagePlaceholder, image, imageAlt } = Astro.props;
+const { href, accentColor, companyLabel, title, blurb, imagePlaceholder, image, imageAlt, imageScale } = Astro.props;
+const imageStyle = imageScale && imageScale !== 1 ? `transform: scale(${imageScale}); transform-origin: center;` : '';
 ---
 <a
   href={href}
@@ -25,6 +27,7 @@ const { href, accentColor, companyLabel, title, blurb, imagePlaceholder, image, 
         src={image}
         alt={imageAlt ?? companyLabel}
         class="w-full h-full object-cover"
+        style={imageStyle}
       />
     ) : (
       <span class="font-mono text-xs text-ink-muted text-center px-4 leading-relaxed">
